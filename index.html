@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Meal Planner</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,14 +12,294 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+      <!-- Navigation Bar Start -->
+      <nav class="navbar-collapse navbar-right">
+        <div class="container-fluid">
+
+      <!-- Sign-Up Modal -->
+      <a href="#" id="signup" data-toggle="modal" data-target="#register">Sign Up</a>
+        <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+              </div>
+              <div class="modal-body">
+                <form id="sign-up" class="modal-form">
+                  <div class="form-group modal-message"></div>
+                  <br>
+                  <div>
+                    <label>Email Address</label>
+                    <input class="form-group" name="credentials[email]" type="text" placeholder="Enter Email">
+                  </div>
+                  <div>
+                    <label>Password</label>
+                    <input class="form-group" name="credentials[password]" type="password" placeholder="Password">
+                  </div>
+                  <div>
+                    <label>Confirm Password</label>
+                    <input class="form-group" name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Register</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sign-In Modal -->
+        <a href="#" id="log-in" data-toggle="modal" data-target="#login">Sign In</a>
+          <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+                </div>
+                <div class="modal-body">
+                  <form id="sign-in" class="modal-form">
+                    <div class="modal-message"></div>
+                    <br>
+                    <div>
+                      <label>Email Address</label>
+                      <input name="credentials[email]" type="text" placeholder="Enter Email">
+                    </div>
+                    <div>
+                      <label>Password</label>
+                      <input name="credentials[password]" type="password" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign In</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Change Password Modal -->
+          <a href="#" id="change-pw" class="hidden" data-toggle="modal" data-target="#password-change">Change Password</a>
+            <div class="modal fade" id="password-change" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+                  </div>
+                  <div class="modal-body">
+                    <form id="change-password" class="modal-form">
+                      <div class="modal-message"></div>
+                      <br>
+                      <div>
+                        <label>Old Password</label>
+                      <input name="passwords[old]" type="password" placeholder="Old Password">
+                      </div>
+                      <div>
+                        <label>New Password</label>
+                        <input name="passwords[new]" type="password" placeholder="New Password">
+                      </div>
+                      <button type="submit" class="btn btn-primary">Change Password</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sign-Out Modal -->
+            <a href="#" id="log-out" class="hidden"  data-toggle="modal" data-target="#logout">Sign Out</a>
+              <div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Sign Out</h5>
+                    </div>
+                  <div class="modal-body">
+                    <form id="sign-out" class="modal-form">
+                      <div class="modal-message">Are you sure?</div>
+                      <br>
+                      <button type="submit" class="btn btn-primary" id="signout">Yes. Sign Out</button>
+                      <button type="button" data-dismiss="modal" class="btn btn-secondary">Close</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Navigation Bar End -->
+          </div>
+        </nav>
+
+        <!-- Title -->
+        <h1 class="topHeading">Meal Planner</h1>
+
+        <!-- Create Meal Modal -->
+        <button type="button" id="create-meal" class="btn btn-primary hidden" data-toggle="modal" data-target="#new-meal">Add A Meal</button>
+          <div class="modal fade" id="new-meal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add A Meal</h5>
+                </div>
+                <div class="modal-body">
+                  <form id="add-meal">
+                    <div class="form-group modal-message"></div>
+                    <br>
+                    <div>
+                      <label>Weekday</label>
+                      <select name="meal[weekday]" required>
+                        <option disabled selected value> -- select an value -- </option>
+                        <option value="Sunday">Sunday</option>
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                        <option value="Saturday">Saturday</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label>Meal Type</label>
+                      <select name="meal[mealtype]" required>
+                        <option disabled selected value> -- select an value -- </option>
+                        <option value="Breakfast">Breakfast</option>
+                        <option value="Lunch">Lunch</option>
+                        <option value="Dinner">Dinner</option>
+                        <option value="Snack">Snack</option>
+                      </select>
+                    </div>
+                    <br>
+                    <div>
+                      <label>Entree</label>
+                      <input class="form-group" name="meal[entree]" type="text" maxlength="50" placeholder="Enter an Entree" required>
+                    </div>
+                    <div>
+                      <label>Side 1</label>
+                      <input class="form-group" name="meal[side1]" type="text" maxlength="50" style="width: 200px" placeholder="Enter a Side Dish">
+                    </div>
+                    <div>
+                      <label>Side 2</label>
+                      <input class="form-group" name="meal[side2]" type="text" maxlength="50" style="width: 200px" placeholder="Enter a Side Dish">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Edit Meal Modal -->
+          <!-- <button type="button" id="create-meal" class="btn btn-primary hidden" data-toggle="modal" data-target="#new-meal">Add A Meal</button> -->
+            <div class="modal fade" id="edit-mealitem" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Meal</h5>
+                  </div>
+                  <div class="modal-body">
+                    <form id="edit-meal">
+                      <div class="form-group modal-message"></div>
+                      <br>
+                      <div>
+                        <label>Weekday</label>
+                        <select id="weekday" name="meal[weekday]" required>
+                          <option disabled selected value> -- select an value -- </option>
+                          <option value="Sunday">Sunday</option>
+                          <option value="Monday">Monday</option>
+                          <option value="Tuesday">Tuesday</option>
+                          <option value="Wednesday">Wednesday</option>
+                          <option value="Thursday">Thursday</option>
+                          <option value="Friday">Friday</option>
+                          <option value="Saturday">Saturday</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label>Meal Type</label>
+                        <select id="mealtype" name="meal[mealtype]" required>
+                          <option disabled selected value> -- select an value -- </option>
+                          <option value="Breakfast">Breakfast</option>
+                          <option value="Lunch">Lunch</option>
+                          <option value="Dinner">Dinner</option>
+                          <option value="Snack">Snack</option>
+                        </select>
+                      </div>
+                      <br>
+                      <div>
+                        <label>Entree</label>
+                        <input id="entree" class="form-group" name="meal[entree]" type="text" maxlength="50" placeholder="Enter an Entree" required>
+                      </div>
+                      <div>
+                        <label>Side 1</label>
+                        <input id="side1" class="form-group" name="meal[side1]" type="text" maxlength="50" style="width: 200px" placeholder="Enter a Side Dish">
+                      </div>
+                      <div>
+                        <label>Side 2</label>
+                        <input id="side2" class="form-group" name="meal[side2]" type="text" maxlength="50" style="width: 200px" placeholder="Enter a Side Dish">
+                      </div>
+                      <br>
+                      <button type="submit" class="btn btn-primary">Save</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Create Ingredient Modal -->
+            <button type="button" id="create-ingredient" class="btn btn-primary hidden" data-toggle="modal" data-target="#new-ingredient">Add A Grocery List Item</button>
+              <div class="modal fade" id="new-ingredient" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Add A Grocery List Item</h5>
+                    </div>
+                    <div class="modal-body">
+                      <form id="add-ingredient">
+                        <div class="form-group modal-message"></div>
+                        <br>
+                        <div>
+                          <label>Grocery List Item</label>
+                          <input class="form-group" name="ingredient[ingredient]" type="text" maxlength="50" placeholder="Enter an Item" required>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Edit Ingredient Modal -->
+              <!-- <button type="button" id="create-ingredient" class="btn btn-primary hidden" data-toggle="modal" data-target="#new-ingredient">Add A Grocery List Item</button> -->
+                <div class="modal fade" id="edit-ingitem" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Grocery List Item</h5>
+                      </div>
+                      <div class="modal-body">
+                        <form id="edit-ingredient">
+                          <div class="form-group modal-message"></div>
+                          <br>
+                          <div>
+                            <label>Grocery List Item</label>
+                            <input id="ingredient" class="form-group" name="ingredient[ingredient]" type="text" maxlength="50" placeholder="Enter an Item" required>
+                          </div>
+                          <br>
+                          <button type="submit" class="btn btn-primary">Save</button>
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            <br>
+            <br>
+            <div class="message-box" id="message"></div>
+            <br>
+      <div id="content" class="container content col-xs-12 col-md-8"></div>
+
     </body>
 </html>
