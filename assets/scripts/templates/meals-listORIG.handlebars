@@ -1,26 +1,18 @@
 {{#each meals as |meal|}}
-  <div class="row">
-    <!-- <div class="col-xs-12 col-md-6 col-lg-4" data-id="{{meal.id}}"> -->
+    <div class="col-xs-12 col-md-6 col-lg-4" data-id="{{meal.id}}">
       {{#if meal.id}}
-        <div class="col-xs-12 col-md-4">
-        <h3 class=handlebarsDay>{{meal.weekday}}</h3>
-        <h4 class=handlebarsType>{{meal.mealtype}}</h4>
-        </div>
-        <div class="col-md-4">
+        <h2 class=handlebarsDay>{{meal.weekday}}</h2><br>
+        <h3 class=handlebarsType>{{meal.mealtype}}</h3>
         <p class=list-group-item-text1>{{meal.entree}}<br>
         <p class=list-group-item-text2>{{meal.side1}}<br>
         <p class=list-group-item-text3>{{meal.side2}}<br>
-        </div>
       {{else}}
         <p id="mealmsg">You have no meals to display!</p>
       {{/if}}
-      <div class="col-md-4">
       <button class="externalLink" id="{{meal.url}}">{{experience.label}}</button>
       <button class="removeMealEvent meal-button" id="{{meal.id}}">Remove</button>
       <button class="editEvent meal-button" id="{{meal.id}}">Edit</button>
-      </div>
       <br>
       <br>
-    <!-- </div> -->
-  </div>
+    </div>
 {{/each}}

@@ -23,6 +23,15 @@ const onAddMeal = function (event) {
     .catch(mealsUi.addMealFailure)
 }
 
+const onGetMeals = function () {
+  console.log('in meals events, onGetMeals')
+
+  initVariables()
+  mealsApi.getAllMeals()
+    .then(mealsUi.getMealsSuccess)
+    .catch(mealsUi.getMealsFailure)
+}
+
 const OnCancelModal = function () {
   event.preventDefault()
   setTimeout(function () { $('#message').text('') }, 4000)
@@ -38,16 +47,18 @@ const onDeleteMeal = function (event) {
   const mealId = event.target.getAttribute('id')
   // event.target is <button class="delete" type="button" data-id="9">
 
-  console.log('In meal-events, meal id is ', mealId)
+  // console.log('In meal-events, meal id is ', mealId)
 
   mealsApi.deleteMeal(mealId)
     .then(mealsUi.deleteMealSuccess)
+    .then(() => mealsApi.getAllMeals())
+    .then(mealsUi.getMealsSuccess)
     .catch(mealsUi.deleteMealFailure)
 }
 
 const onEditEvent = function (event) {
-  // console.log('in meals-events.js event.target is ', event.target)
-  // console.log('event.target.id is ', event.target.id)
+  console.log('in meals-events.js event.target is ', event.target)
+  console.log('event.target.id is ', event.target.id)
 
   mealsApi.showMealById(event.target.id)
     .then(onShowIdForEditSuccess)
@@ -56,6 +67,8 @@ const onEditEvent = function (event) {
 
 const onShowIdForEditSuccess = function (response) {
   // $('#message').text('Single Record loaded')
+  console.log('response is ', response)
+
   $('#edit-mealitem').modal('show') //
   $('#weekday').val(response.meal.weekday) //
   $('#mealtype').val(response.meal.mealtype) //
@@ -80,6 +93,7 @@ const onExternalLink = function (event) {
 
 const addHandlers = function () {
   $('#add-meal').on('submit', onAddMeal)
+  $('#getMeals').on('click', onGetMeals)
   $('.btn-secondary').on('click', OnCancelModal)
   $('.content').on('click', '.removeMealEvent', onDeleteMeal)
   $('.content').on('click', '.externalLink', onExternalLink)

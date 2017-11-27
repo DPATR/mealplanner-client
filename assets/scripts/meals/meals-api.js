@@ -17,7 +17,7 @@ const addNewMeal = function (data) {
 }
 
 const getAllMeals = function () {
-  // console.log('in meals-api getAllMeals')
+  console.log('in meals-api getAllMeals')
 
   return $.ajax({
     url: config.apiOrigin + '/meals',

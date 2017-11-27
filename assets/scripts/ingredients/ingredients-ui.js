@@ -7,7 +7,7 @@ const showEventsTemplate = require('../templates/ingredients-list.handlebars')
 const getFormFields = require(`../../../lib/get-form-fields`)
 
 const addIngredientSuccess = function (data) {
-  // console.log('in ingredients-ui addIngredientSuccess')
+  console.log('in ingredients-ui addIngredientSuccess')
 
   $('#message').text('Your new grocery item was added!')
   $('#message').show()
@@ -34,8 +34,13 @@ const addIngredientFailure = function () {
 }
 
 const getIngredientsSuccess = function (data) {
-  // console.log('in ingredients-ui.js getIngredientsSuccess')
-
+// const getIngredientsSuccess = function () {
+  console.log('in ingredients-ui.js getIngredientsSuccess')
+  console.log('data is ', data)
+  $('#create-meal').addClass('hidden')
+  $('#getIngredients').addClass('hidden')
+  $('#create-ingredient').removeClass('hidden')
+  $('#getMeals').removeClass('hidden')
   // data.experiences.map((experiences) => {
   //   switch (experiences.eventType) {
   //     case 'Book':
@@ -77,7 +82,7 @@ const deleteIngredientFailure = function () {
 }
 
 const onIngredientUpdate = function (event) {
-  // console.log('in ingredients-ui.js onIngredientUpdate')
+  console.log('in ingredients-ui.js onIngredientUpdate')
 
   event.preventDefault()
   const data = getFormFields(this)
@@ -95,7 +100,7 @@ const onIngredientUpdate = function (event) {
 }
 
 const onUpdateSuccess = function () {
-  // console.log('in meals-ui.js onUpdateSuccess')
+  console.log('in ingredients-ui.js onUpdateSuccess')
 
   $('#message').text('Your grocery item was updated!')
   $('#message').show()

@@ -4,7 +4,7 @@ const config = require('../config')
 const store = require('../store')
 
 const addNewIngredient = function (data) {
-  // console.log('In ingredients-api addNewIngredient')
+  console.log('In ingredients-api addNewIngredient')
 
   return $.ajax({
     url: config.apiOrigin + '/ingredients',
@@ -17,7 +17,7 @@ const addNewIngredient = function (data) {
 }
 
 const getAllIngredients = function () {
-  // console.log('in ingredients-api getAllIngredients')
+  console.log('in ingredients-api.js getAllIngredients')
 
   return $.ajax({
     url: config.apiOrigin + '/ingredients',
@@ -41,7 +41,7 @@ const deleteIngredient = function (ingredientId) {
 }
 
 const showIngredientById = function (id) {
-  // console.log('in ingredients-api.js id is ', id)
+  console.log('in ingredients-api.js id is ', id)
 
   store.currentIngredientID = id
   return $.ajax({
@@ -54,11 +54,11 @@ const showIngredientById = function (id) {
 }
 
 const updateIngredient = function (data) {
-  // console.log('in ingredients-api.js updateIngredient')
-  // console.log('data is ', data)
+  console.log('in ingredients-api.js updateIngredient')
+  console.log('data is ', data)
 
   return $.ajax({
-    url: config.apiOrigin + '/ingredients/' + store.currentID,
+    url: config.apiOrigin + '/ingredients/' + store.currentIngredientID,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token

@@ -23,6 +23,15 @@ const onAddIngredient = function (event) {
     .catch(ingredientsUi.addIngredientFailure)
 }
 
+const onGetIngredients = function () {
+  console.log('in ingredients events, onGetIngredients')
+
+  initVariables()
+  ingredientsApi.getAllIngredients()
+    .then(ingredientsUi.getIngredientsSuccess)
+    .catch(ingredientsUi.getIngredientsFailure)
+}
+
 const OnCancelModal = function () {
   event.preventDefault()
   setTimeout(function () { $('#message').text('') }, 4000)
@@ -45,9 +54,9 @@ const onDeleteIngredient = function (event) {
     .catch(ingredientsUi.deleteIngredientFailure)
 }
 
-const onEditEvent = function (event) {
-  // console.log('in ingredients-events.js event.target is ', event.target)
-  // console.log('event.target.id is ', event.target.id)
+const onEditIngEvent = function (event) {
+  console.log('in ingredients-events.js event.target is ', event.target)
+  console.log('event.target.id is ', event.target.id)
 
   ingredientsApi.showIngredientById(event.target.id)
     .then(onShowIdForEditSuccess)
@@ -56,6 +65,8 @@ const onEditEvent = function (event) {
 
 const onShowIdForEditSuccess = function (response) {
   // $('#message').text('Single Record loaded')
+  console.log('response is ', response)
+
   $('#edit-ingitem').modal('show')
   $('#ingredient').val(response.ingredient.ingredient)
   // // $('#event-update').on('submit', onEventUpdate)
@@ -76,11 +87,12 @@ const onExternalLink = function (event) {
 
 const addHandlers = function () {
   $('#add-ingredient').on('submit', onAddIngredient)
+  $('#getIngredients').on('click', onGetIngredients)
   $('.btn-secondary').on('click', OnCancelModal)
   $('.content').on('click', '.removeIngredientEvent', onDeleteIngredient)
   $('.content').on('click', '.externalLink', onExternalLink)
   // $('.content').on('click', '.editMealEvent', onEditMeal)
-  $('.content').on('click', '.editEvent', onEditEvent)
+  $('.content').on('click', '.editIngEvent', onEditIngEvent)
   // $('#edit-meal').on('submit', onMealUpdate)
   $('#edit-ingredient').on('submit', ingredientsUi.onIngredientUpdate)
   //  submit-getall

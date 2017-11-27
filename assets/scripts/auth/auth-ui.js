@@ -39,9 +39,11 @@ const signInSuccess = function (data) {
   })
   $('#signup').addClass('hidden')
   $('#log-in').addClass('hidden')
+  $('#getMeals').addClass('hidden')
   $('#change-pw').removeClass('hidden')
   $('#log-out').removeClass('hidden')
   $('#create-meal').removeClass('hidden')
+  $('#getIngredients').removeClass('hidden')
   // $('#panel').removeClass('hidden')
 
   console.log('in auth-ui.js about to call getAllMeals')
@@ -86,8 +88,11 @@ const signOutSuccess = function (data) {
   $('#log-in').removeClass('hidden')
   $('#change-pw').addClass('hidden')
   $('#log-out').addClass('hidden')
-  $('#create-item').addClass('hidden')
-  $('#panel').addClass('hidden')
+  $('#create-meal').addClass('hidden')
+  $('#create-ingredient').addClass('hidden')
+  $('#getIngredients').addClass('hidden')
+  $('#getMeals').addClass('hidden')
+  // $('#panel').addClass('hidden')
   $('.content').empty()
 }
 

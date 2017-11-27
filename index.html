@@ -131,6 +131,13 @@
 
         <!-- Title -->
         <h1 class="topHeading">Meal Planner</h1>
+        <h2 class="topHeading2">This Week's Menu</h2>
+
+        <!-- View Grocery List -->
+        <!-- <button id="getBillsNav" class="btn btn-view navbar-btn btn-lg">View Bills</button> -->
+        <!-- <button id="getIngredients" class="btn btn-view navbar-btn btn-lg">View Grocery List</button> -->
+        <button id="getIngredients" class="btn btn-primary hidden">View Grocery List</button>
+        <button id="getMeals" class="btn btn-primary hidden">View Menu</button>
 
         <!-- Create Meal Modal -->
         <button type="button" id="create-meal" class="btn btn-primary hidden" data-toggle="modal" data-target="#new-meal">Add A Meal</button>
@@ -247,7 +254,7 @@
             </div>
 
             <!-- Create Ingredient Modal -->
-            <button type="button" id="create-ingredient" class="btn btn-primary hidden" data-toggle="modal" data-target="#new-ingredient">Add A Grocery List Item</button>
+            <button type="button" id="create-ingredient" class="btn btn-primary hidden" data-toggle="modal" data-target="#new-ingredient">Add A Grocery Item</button>
               <div class="modal fade" id="new-ingredient" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
@@ -295,11 +302,11 @@
                     </div>
                   </div>
                 </div>
-            <br>
-            <br>
+
             <div class="message-box" id="message"></div>
-            <br>
-      <div id="content" class="container content col-xs-12 col-md-8"></div>
+
+      <!-- <div id="content" class="container content col-xs-12 col-md-8"></div> -->
+      <div id="content" class="container content"></div>
 
     </body>
 </html>

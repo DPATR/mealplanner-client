@@ -36,6 +36,11 @@ const addMealFailure = function () {
 const getMealsSuccess = function (data) {
   // console.log('in meals-ui.js getMealsSuccess')
 
+  $('#create-ingredient').addClass('hidden')
+  $('#getMeals').addClass('hidden')
+  $('#getIngredients').removeClass('hidden')
+  $('#create-meal').removeClass('hidden')
+
   // data.experiences.map((experiences) => {
   //   switch (experiences.eventType) {
   //     case 'Book':
