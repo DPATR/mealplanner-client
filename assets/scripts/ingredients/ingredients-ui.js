@@ -1,40 +1,40 @@
 'use strict'
 
-const mealsApi = require('./meals-api.js')
+const ingredientsApi = require('./ingredients-api.js')
 
-const showEventsTemplate = require('../templates/meals-list.handlebars')
+const showEventsTemplate = require('../templates/ingredients-list.handlebars')
 
 const getFormFields = require(`../../../lib/get-form-fields`)
 
-const addMealSuccess = function (data) {
-  // console.log('in meals-ui addMealSuccess')
+const addIngredientSuccess = function (data) {
+  // console.log('in ingredients-ui addIngredientSuccess')
 
-  $('#message').text('Your new meal was added!')
+  $('#message').text('Your new grocery item was added!')
   $('#message').show()
   setTimeout(function () { $('#message').text('') }, 4000)
-  $('#new-meal').modal('hide')
-  $('#new-meal').on('hidden.bs.modal', function () {
+  $('#new-ingredient').modal('hide')
+  $('#nnew-ingredient').on('hidden.bs.modal', function () {
     $(this).find('form')[0].reset()
     $('.modal-message').text('')
   })
-  mealsApi.getAllMeals()
-    .then(getMealsSuccess)
-    .catch(getMealsFailure)
+  ingredientsApi.getAllIngredients()
+    .then(getIngredientsSuccess)
+    .catch(getIngredientsFailure)
 }
 
-const addMealFailure = function () {
-  $('#message').text('Unexpected error creating your experience. Please try again.')
+const addIngredientFailure = function () {
+  $('#message').text('Unexpected error creating your grocery item. Please try again.')
   $('#message').show()
   setTimeout(function () { $('#message').text('') }, 4000)
-  $('#new-experience').modal('hide')
-  $('#new-experience').on('hidden.bs.modal', function () {
+  $('#new-ingredient').modal('hide')
+  $('#new-ingredient').on('hidden.bs.modal', function () {
     $(this).find('form')[0].reset()
     $('.modal-message').text('')
   })
 }
 
-const getMealsSuccess = function (data) {
-  // console.log('in meals-ui.js getMealsSuccess')
+const getIngredientsSuccess = function (data) {
+  // console.log('in ingredients-ui.js getIngredientsSuccess')
 
   // data.experiences.map((experiences) => {
   //   switch (experiences.eventType) {
@@ -56,43 +56,40 @@ const getMealsSuccess = function (data) {
   //   }
   // })
   $('#list-content').empty()
-  const showEventsHtml = showEventsTemplate({meals: data.meals})
+  const showEventsHtml = showEventsTemplate({ingredients: data.ingredients})
   $('.content').html(showEventsHtml)
 }
 
-const getMealsFailure = function () {
-  $('#message').text('Unexpected error retrieving data for this experience. Please try again.')
+const getIngredientsFailure = function () {
+  $('#message').text('Unexpected error retrieving data for this grocery item. Please try again.')
 }
 
-const deleteExperienceSuccess = function () {
-  mealsApi.getAllMeals()
-    .then(getMealsSuccess)
-    .catch(getMealsFailure)
+const deleteIngredientSuccess = function () {
+  ingredientsApi.getAllIngredients()
+    .then(getIngredientsSuccess)
+    .catch(getIngredientsFailure)
 }
 
-const deleteExperienceFailure = function () {
+const deleteIngredientFailure = function () {
   $('#message').show()
-  $('#message').text('Unexpected error deleting your experience. Please try again.')
+  $('#message').text('Unexpected error deleting your grocery item. Please try again.')
   setTimeout(function () { $('.modal-message').fadeOut() }, 6000)
 }
 
-const onMealUpdate = function (event) {
-  // console.log('in meals-ui.js onMealUpdate')
+const onIngredientUpdate = function (event) {
+  // console.log('in ingredients-ui.js onIngredientUpdate')
 
   event.preventDefault()
   const data = getFormFields(this)
   console.log('event.target is', event.target)
   console.log('event.target.id is', event.target.id)
   console.log('data is ', data)
-  console.log('data.meal is ', data.meal)
-  // const currentMealID = $(this).data('id')
-  // console.log(this.data('id'))
-  // console.log('currentMealID is ', currentMealID)
+  console.log('data.ingredient is ', data.ingredient)
 
   // if (!data.experience.hasOwnProperty('completed')) {
   //   data.experience.completed = false
   // }
-  mealsApi.updateMeal(data) // removed ID
+  ingredientsApi.updateIngredient(data) // removed ID
     .then(onUpdateSuccess)
     .catch(onUpdateFailure)
 }
@@ -100,35 +97,35 @@ const onMealUpdate = function (event) {
 const onUpdateSuccess = function () {
   // console.log('in meals-ui.js onUpdateSuccess')
 
-  $('#message').text('Your meal was updated!')
+  $('#message').text('Your grocery item was updated!')
   $('#message').show()
   setTimeout(function () { $('#message').text('') }, 4000)
-  $('#edit-mealitem').modal('hide')
-  $('#edit-mealitem').on('hidden.bs.modal', function () {
+  $('#edit-ingitem').modal('hide')
+  $('#edit-ingitem').on('hidden.bs.modal', function () {
     $(this).find('form')[0].reset()
     $('.modal-message').text('')
   })
-  mealsApi.getAllMeals()
-    .then(getMealsSuccess)
-    .catch(getMealsFailure)
+  ingredientsApi.getAllIngredients()
+    .then(getIngredientsSuccess)
+    .catch(getIngredientsFailure)
 }
 
 const onUpdateFailure = function () {
-  $('#message').text('Unexpected error updating your meal. Please confirm you are signed-in and try again')
-  $('.modal-message').text('Unexpected error updating your meal. Please confirm you are signed-in and try again')
+  $('#message').text('Unexpected error updating your grocery item. Please confirm you are signed-in and try again')
+  $('.modal-message').text('Unexpected error updating your grocery item. Please confirm you are signed-in and try again')
   $('.modal').on('hidden.bs.modal', function () {
     $('.modal-message').text('')
   })
 }
 
 module.exports = {
-  addMealSuccess,
-  addMealFailure,
-  getMealsSuccess,
-  getMealsFailure,
-  deleteExperienceSuccess,
-  deleteExperienceFailure,
+  addIngredientSuccess,
+  addIngredientFailure,
+  getIngredientsSuccess,
+  getIngredientsFailure,
+  deleteIngredientSuccess,
+  deleteIngredientFailure,
   onUpdateSuccess,
   onUpdateFailure,
-  onMealUpdate
+  onIngredientUpdate
 }

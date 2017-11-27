@@ -38,18 +38,18 @@ const onDeleteIngredient = function (event) {
   const ingredientId = event.target.getAttribute('id')
   // event.target is <button class="delete" type="button" data-id="9">
 
-  console.log('In meal-events, meal id is ', ingredientId)
+  console.log('In ingredients-events, ingredient id is ', ingredientId)
 
-  mealsApi.deleteIngredient(ingredientId)
-    .then(mealsUi.deleteIngredientSuccess)
-    .catch(mealsUi.deleteIngredientFailure)
+  ingredientsApi.deleteIngredient(ingredientId)
+    .then(ingredientsUi.deleteIngredientSuccess)
+    .catch(ingredientsUi.deleteIngredientFailure)
 }
 
 const onEditEvent = function (event) {
   // console.log('in ingredients-events.js event.target is ', event.target)
   // console.log('event.target.id is ', event.target.id)
 
-  mealsApi.showIngredientById(event.target.id)
+  ingredientsApi.showIngredientById(event.target.id)
     .then(onShowIdForEditSuccess)
     .catch(onShowByIdForEditFailure)
 }

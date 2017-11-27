@@ -26,8 +26,8 @@ const addMealFailure = function () {
   $('#message').text('Unexpected error creating your experience. Please try again.')
   $('#message').show()
   setTimeout(function () { $('#message').text('') }, 4000)
-  $('#new-experience').modal('hide')
-  $('#new-experience').on('hidden.bs.modal', function () {
+  $('#new-meal').modal('hide')
+  $('#new-meal').on('hidden.bs.modal', function () {
     $(this).find('form')[0].reset()
     $('.modal-message').text('')
   })
@@ -61,7 +61,7 @@ const getMealsSuccess = function (data) {
 }
 
 const getMealsFailure = function () {
-  $('#message').text('Unexpected error retrieving data for this experience. Please try again.')
+  $('#message').text('Unexpected error retrieving data for this meal. Please try again.')
 }
 
 const deleteExperienceSuccess = function () {

@@ -3,11 +3,11 @@
 const config = require('../config')
 const store = require('../store')
 
-const addNewMeal = function (data) {
-  // console.log('In meals-api addNewMeal')
+const addNewIngredient = function (data) {
+  // console.log('In ingredients-api addNewIngredient')
 
   return $.ajax({
-    url: config.apiOrigin + '/meals',
+    url: config.apiOrigin + '/ingredients',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -16,11 +16,11 @@ const addNewMeal = function (data) {
   })
 }
 
-const getAllMeals = function () {
-  // console.log('in meals-api getAllMeals')
+const getAllIngredients = function () {
+  // console.log('in ingredients-api getAllIngredients')
 
   return $.ajax({
-    url: config.apiOrigin + '/meals',
+    url: config.apiOrigin + '/ingredients',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -28,11 +28,11 @@ const getAllMeals = function () {
   })
 }
 
-const deleteMeal = function (mealId) {
-  // console.log('In meals-api.js')
+const deleteIngredient = function (ingredientId) {
+  // console.log('In ingredients-api.js')
 
   return $.ajax({
-    url: config.apiOrigin + '/meals/' + mealId,
+    url: config.apiOrigin + '/ingredients/' + ingredientId,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -40,12 +40,12 @@ const deleteMeal = function (mealId) {
   })
 }
 
-const showMealById = function (id) {
-  // console.log('in meals-api.js id is ', id)
+const showIngredientById = function (id) {
+  // console.log('in ingredients-api.js id is ', id)
 
-  store.currentID = id
+  store.currentIngredientID = id
   return $.ajax({
-    url: config.apiOrigin + '/meals/' + id,
+    url: config.apiOrigin + '/ingredients/' + id,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -53,12 +53,12 @@ const showMealById = function (id) {
   })
 }
 
-const updateMeal = function (data) {
-  // console.log('in meals-api.js updateMeal')
+const updateIngredient = function (data) {
+  // console.log('in ingredients-api.js updateIngredient')
   // console.log('data is ', data)
 
   return $.ajax({
-    url: config.apiOrigin + '/meals/' + store.currentID,
+    url: config.apiOrigin + '/ingredients/' + store.currentID,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -68,9 +68,9 @@ const updateMeal = function (data) {
 }
 
 module.exports = {
-  addNewMeal,
-  getAllMeals,
-  deleteMeal,
-  showMealById,
-  updateMeal
+  addNewIngredient,
+  getAllIngredients,
+  deleteIngredient,
+  showIngredientById,
+  updateIngredient
 }
