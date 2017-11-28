@@ -92,6 +92,8 @@ const signOutSuccess = function (data) {
   $('#create-ingredient').addClass('hidden')
   $('#getIngredients').addClass('hidden')
   $('#getMeals').addClass('hidden')
+  $('.topHeading2').addClass('hidden')
+  $('.topHeading3').addClass('hidden')
   // $('#panel').addClass('hidden')
   $('.content').empty()
 }

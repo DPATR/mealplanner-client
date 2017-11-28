@@ -36,30 +36,32 @@ const addMealFailure = function () {
 const getMealsSuccess = function (data) {
   // console.log('in meals-ui.js getMealsSuccess')
 
+  $('.topHeading3').addClass('hidden')
   $('#create-ingredient').addClass('hidden')
   $('#getMeals').addClass('hidden')
+  $('.topHeading2').removeClass('hidden')
   $('#getIngredients').removeClass('hidden')
   $('#create-meal').removeClass('hidden')
 
-  // data.experiences.map((experiences) => {
-  //   switch (experiences.eventType) {
-  //     case 'Book':
-  //       experiences.url = 'https://www.goodreads.com/'
-  //       experiences.label = 'Go to Goodreads'
-  //       break
-  //     case 'Movie':
-  //       experiences.url = 'https://www.fandango.com/'
-  //       experiences.label = 'Go to Fandango'
-  //       break
-  //     case 'Relaxation':
-  //       experiences.url = 'https://www.tripadvisor.com/'
-  //       experiences.label = 'Go to Tripadvisor to get started'
-  //       break
-  //     default:
-  //       experiences.url = 'http://google.com/search?q=' + experiences.name
-  //       experiences.label = 'Search Google to get started'
-  //   }
-  // })
+  data.meals.map((meals) => {
+    switch (meals.entree) {
+      //     case 'Book':
+      //       experiences.url = 'https://www.goodreads.com/'
+      //       experiences.label = 'Go to Goodreads'
+      //       break
+      //     case 'Movie':
+      //       experiences.url = 'https://www.fandango.com/'
+      //       experiences.label = 'Go to Fandango'
+      //       break
+      //     case 'Relaxation':
+      //       experiences.url = 'https://www.tripadvisor.com/'
+      //       experiences.label = 'Go to Tripadvisor to get started'
+      //       break
+      default:
+        meals.url = 'https://www.epicurious.com/search/' + meals.entree
+        meals.label = 'Search Epicurious Recipes'
+    }
+  })
   $('#list-content').empty()
   const showEventsHtml = showEventsTemplate({meals: data.meals})
   $('.content').html(showEventsHtml)

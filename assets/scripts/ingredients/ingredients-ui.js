@@ -39,6 +39,8 @@ const getIngredientsSuccess = function (data) {
   console.log('data is ', data)
   $('#create-meal').addClass('hidden')
   $('#getIngredients').addClass('hidden')
+  $('.topHeading2').addClass('hidden')
+  $('.topHeading3').removeClass('hidden')
   $('#create-ingredient').removeClass('hidden')
   $('#getMeals').removeClass('hidden')
   // data.experiences.map((experiences) => {

@@ -88,7 +88,7 @@ const onShowByIdForEditFailure = function () {
 
 const onExternalLink = function (event) {
   event.preventDefault()
-  window.open(event.target.id, 'http://www.google.com')
+  window.open(event.target.id, 'https://www.epicurious.com/search/')
 }
 
 const addHandlers = function () {
