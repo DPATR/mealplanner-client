@@ -1,10 +1,9 @@
 'use strict'
 
 const ingredientsApi = require('./ingredients-api.js')
-
 const showEventsTemplate = require('../templates/ingredients-list.handlebars')
-
 const getFormFields = require(`../../../lib/get-form-fields`)
+const store = require('../store')
 
 const addIngredientSuccess = function (data) {
   console.log('in ingredients-ui addIngredientSuccess')
@@ -37,31 +36,44 @@ const getIngredientsSuccess = function (data) {
 // const getIngredientsSuccess = function () {
   console.log('in ingredients-ui.js getIngredientsSuccess')
   console.log('data is ', data)
+
   $('#create-meal').addClass('hidden')
   $('#getIngredients').addClass('hidden')
   $('.topHeading2').addClass('hidden')
+  $('#searchLocation').addClass('hidden')
   $('.topHeading3').removeClass('hidden')
   $('#create-ingredient').removeClass('hidden')
   $('#getMeals').removeClass('hidden')
-  // data.experiences.map((experiences) => {
-  //   switch (experiences.eventType) {
-  //     case 'Book':
-  //       experiences.url = 'https://www.goodreads.com/'
-  //       experiences.label = 'Go to Goodreads'
-  //       break
-  //     case 'Movie':
-  //       experiences.url = 'https://www.fandango.com/'
-  //       experiences.label = 'Go to Fandango'
-  //       break
-  //     case 'Relaxation':
-  //       experiences.url = 'https://www.tripadvisor.com/'
-  //       experiences.label = 'Go to Tripadvisor to get started'
-  //       break
-  //     default:
-  //       experiences.url = 'http://google.com/search?q=' + experiences.name
-  //       experiences.label = 'Search Google to get started'
-  //   }
-  // })
+
+  const searchText = 'grocery stores'
+  // const searchText2 = ' carrying '
+  const location = store.currentLocation
+  // const location = document.getElementById('googleLocationInput').value
+
+  console.log('searchText is ', searchText)
+  // console.log('searchText2 is ', searchText2)
+  console.log('location is ', location)
+
+  data.ingredients.map((ingredients) => {
+    switch (ingredients.ingredient) {
+    // case 'Book':
+    //   experiences.url = 'https://www.goodreads.com/'
+    //   experiences.label = 'Go to Goodread s'
+    //   break
+    // case 'Movie':
+    //   experiences.url = 'https://www.fandango.com/'
+    //   experiences.label = 'Go to Fandango'
+    //   break
+    // case 'Relaxation':
+    //   experiences.url = 'https://www.tripadvisor.com/'
+    //   experiences.label = 'Go to Tripadvisor to get started'
+    //   break
+      default:
+        // ingredients.url = 'http://google.com/search?q=' + searchText + ' in ' + location + searchText2 + ingredients.ingredient
+        ingredients.url = 'http://google.com/search?q=' + searchText + ' in ' + location + ' ' + ingredients.ingredient
+        ingredients.label = 'Search Stores Near Me'
+    }
+  })
   $('#list-content').empty()
   const showEventsHtml = showEventsTemplate({ingredients: data.ingredients})
   $('.content').html(showEventsHtml)

@@ -1,13 +1,41 @@
 'use strict'
 
+const ingredientsApi = require('../ingredients/ingredients-api.js')
+const ingredientsUi = require('../ingredients/ingredients-ui.js')
 const mealsApi = require('./meals-api.js')
-
 const showEventsTemplate = require('../templates/meals-list.handlebars')
-
 const getFormFields = require(`../../../lib/get-form-fields`)
+const store = require('../store')
+
+const buildNewGroceryItem = function (element) {
+  // let newGroceryItem = false
+
+  // console.log('newGroceryItem is ', newGroceryItem)
+
+  // if (entree) {
+  //   const newElement = entree
+  //   console.log('entree is ', newElement)
+  // }
+  // if (side1) {
+  //   const newElement = side1
+  //   console.log('side1 is ', newElement)
+  // }
+  // if (side2) {
+  //   const newElement = side2
+  //   console.log('side2 is ', newElement)
+  // }
+  const newIngredientData = {
+    'ingredient': {
+      'ingredient': element
+    }
+  }
+  ingredientsApi.addNewIngredient(newIngredientData)
+    .then(ingredientsUi.addIngredientSuccess)
+    .catch(ingredientsUi.addIngredientFailure)
+}
 
 const addMealSuccess = function (data) {
-  // console.log('in meals-ui addMealSuccess')
+  console.log('in meals-ui addMealSuccess')
 
   $('#message').text('Your new meal was added!')
   $('#message').show()
@@ -17,10 +45,37 @@ const addMealSuccess = function (data) {
     $(this).find('form')[0].reset()
     $('.modal-message').text('')
   })
+  if (store.entree) {
+    const newElement = store.entree
+    console.log('store.entree is ', newElement)
+    buildNewGroceryItem(newElement)
+  }
+  if (store.side1) {
+    const newElement = store.side1
+    console.log('store.side1 is ', newElement)
+    buildNewGroceryItem(newElement)
+  }
+  if (store.side2) {
+    const newElement = store.side2
+    console.log('store.side2 is ', newElement)
+    buildNewGroceryItem(newElement)
+  }
   mealsApi.getAllMeals()
     .then(getMealsSuccess)
     .catch(getMealsFailure)
 }
+
+// for each of 3 elements:  entree, side1, side2
+// if (element) {
+//  const newIngredientData = {
+//    'ingredient': {
+//      'ingredient': element
+//    }
+//  }
+// IngredientApi.addNewIngredient(newIngredientData)
+//    .then(ingredientsUi.addIngredientSuccess)
+//    .catch(ingredientsUi.addIngredientFailure)
+// }
 
 const addMealFailure = function () {
   $('#message').text('Unexpected error creating your experience. Please try again.')
@@ -39,6 +94,7 @@ const getMealsSuccess = function (data) {
   $('.topHeading3').addClass('hidden')
   $('#create-ingredient').addClass('hidden')
   $('#getMeals').addClass('hidden')
+  $('#searchLocation').removeClass('hidden')
   $('.topHeading2').removeClass('hidden')
   $('#getIngredients').removeClass('hidden')
   $('#create-meal').removeClass('hidden')

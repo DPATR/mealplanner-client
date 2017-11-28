@@ -3,12 +3,16 @@
 const getFormFields = require(`../../../lib/get-form-fields`)
 const mealsApi = require('./meals-api.js')
 const mealsUi = require('./meals-ui.js')
-// const store = require('../store')
+const store = require('../store')
 
 // initialize variables used for messages on screen
 const initVariables = function () {
   $('#message').text('')
   $('.modal-message').text('')
+  store.entree = ''
+  store.side1 = ''
+  store.side2 = ''
+
   return true
 }
 
@@ -24,7 +28,7 @@ const onAddMeal = function (event) {
 }
 
 const onGetMeals = function () {
-  console.log('in meals events, onGetMeals')
+  // console.log('in meals events, onGetMeals')
 
   initVariables()
   mealsApi.getAllMeals()
@@ -42,7 +46,7 @@ const OnCancelModal = function () {
 }
 
 const onDeleteMeal = function (event) {
-  console.log('In meals-events.js')
+  // console.log('In meals-events.js')
 
   const mealId = event.target.getAttribute('id')
   // event.target is <button class="delete" type="button" data-id="9">
@@ -57,8 +61,8 @@ const onDeleteMeal = function (event) {
 }
 
 const onEditEvent = function (event) {
-  console.log('in meals-events.js event.target is ', event.target)
-  console.log('event.target.id is ', event.target.id)
+  // console.log('in meals-events.js event.target is ', event.target)
+  // console.log('event.target.id is ', event.target.id)
 
   mealsApi.showMealById(event.target.id)
     .then(onShowIdForEditSuccess)
@@ -67,7 +71,7 @@ const onEditEvent = function (event) {
 
 const onShowIdForEditSuccess = function (response) {
   // $('#message').text('Single Record loaded')
-  console.log('response is ', response)
+  // console.log('response is ', response)
 
   $('#edit-mealitem').modal('show') //
   $('#weekday').val(response.meal.weekday) //

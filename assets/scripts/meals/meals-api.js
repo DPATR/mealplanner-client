@@ -4,7 +4,16 @@ const config = require('../config')
 const store = require('../store')
 
 const addNewMeal = function (data) {
-  // console.log('In meals-api addNewMeal')
+  console.log('In meals-api addNewMeal')
+
+  console.log('In meals-api addNewMeal, data is ', data)
+  console.log('data.meal.entree is ', data.meal.entree)
+  console.log('data.meal.entree is ', data.meal.side1)
+  console.log('data.meal.entree is ', data.meal.side2)
+
+  store.entree = data.meal.entree
+  store.side1 = data.meal.side1
+  store.side2 = data.meal.side2
 
   return $.ajax({
     url: config.apiOrigin + '/meals',

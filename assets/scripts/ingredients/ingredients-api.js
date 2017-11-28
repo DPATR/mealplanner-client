@@ -6,6 +6,8 @@ const store = require('../store')
 const addNewIngredient = function (data) {
   console.log('In ingredients-api addNewIngredient')
 
+  console.log('This is what data looks like ', data)
+
   return $.ajax({
     url: config.apiOrigin + '/ingredients',
     method: 'POST',

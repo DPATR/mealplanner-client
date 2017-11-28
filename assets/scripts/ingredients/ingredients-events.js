@@ -3,13 +3,43 @@
 const getFormFields = require(`../../../lib/get-form-fields`)
 const ingredientsApi = require('./ingredients-api.js')
 const ingredientsUi = require('./ingredients-ui.js')
-// const store = require('../store')
+const store = require('../store')
 
 // initialize variables used for messages on screen
 const initVariables = function () {
   $('#message').text('')
   $('.modal-message').text('')
   return true
+}
+
+const onSetupGoogle = function (event) {
+  console.log('in ingredients-events onSetupGoogle')
+  event.preventDefault()
+  console.log('in ingredients-events onSearchGoogle, event.target is ', event.target)
+
+  // const searchText = 'grocery stores'
+  // const searchText2 = ' carrying '
+
+  // const name = 'Green Beans'
+  // console.log('name is ', name)
+
+  const location = this[0].value
+  store.currentLocation = location
+  // console.log('in ingredients-events, location is ', location)
+  const location2 = store.currentLocation
+  console.log('in ingredients-events, store.currentlocation is ', location2)
+
+  // grocery stores in New Bedford, MA carrying Green Beans
+  // window.open('http://google.com/search?q=' + searchText + ' in ' + location + searchText2 + name)
+
+  document.getElementById('googleLocationInput').value = ''
+}
+
+const onOpenHtml = function (event) {
+  console.log('in ingredients-events onOpenHtml')
+  event.preventDefault()
+  const url = $(this).attr('href')
+  window.open(url)
 }
 
 const onAddIngredient = function (event) {
@@ -26,10 +56,17 @@ const onAddIngredient = function (event) {
 const onGetIngredients = function () {
   console.log('in ingredients events, onGetIngredients')
 
-  initVariables()
-  ingredientsApi.getAllIngredients()
-    .then(ingredientsUi.getIngredientsSuccess)
-    .catch(ingredientsUi.getIngredientsFailure)
+  const currLocation = store.currentLocation
+  console.log('currLocation is ', currLocation)
+
+  if (!currLocation) {
+    $('#message').text('You need to enter your current location')
+  } else {
+    initVariables()
+    ingredientsApi.getAllIngredients()
+      .then(ingredientsUi.getIngredientsSuccess)
+      .catch(ingredientsUi.getIngredientsFailure)
+  }
 }
 
 const OnCancelModal = function () {
@@ -80,7 +117,7 @@ const onShowByIdForEditFailure = function () {
   })
 }
 
-const onExternalLink = function (event) {
+const onIngExternalLink = function (event) {
   event.preventDefault()
   window.open(event.target.id, 'http://www.google.com')
 }
@@ -90,11 +127,14 @@ const addHandlers = function () {
   $('#getIngredients').on('click', onGetIngredients)
   $('.btn-secondary').on('click', OnCancelModal)
   $('.content').on('click', '.removeIngredientEvent', onDeleteIngredient)
-  $('.content').on('click', '.externalLink', onExternalLink)
+  $('.content').on('click', '.ingExternalLink', onIngExternalLink)
   // $('.content').on('click', '.editMealEvent', onEditMeal)
   $('.content').on('click', '.editIngEvent', onEditIngEvent)
   // $('#edit-meal').on('submit', onMealUpdate)
   $('#edit-ingredient').on('submit', ingredientsUi.onIngredientUpdate)
+  $('.external').on('click', onOpenHtml)
+  $('#searchLocation').on('submit', onSetupGoogle)
+  // $('#search').on('click', onSearchGoogle)
   //  submit-getall
 }
 
