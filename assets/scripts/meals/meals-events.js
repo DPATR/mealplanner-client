@@ -32,6 +32,7 @@ const c = function (pos) {
   // https://www.google.com/maps/search/spanish omelet/@42°21'10.8"N, 71°03'25.7"W
   // https://www.google.com/maps/search/italian bread/@42.3566423,-71.0557196,15z
   // https://www.google.com/maps/search/baked haddock/@42.3566423,-71.0557196,15z
+  // https://www.google.com/maps/search/shrimp/@42.3566423,-71.0557196,15z
   store.coords = coords
 }
 const onGetCurrentPosition = function (event) {
@@ -133,5 +134,6 @@ const addHandlers = function () {
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  onGetCurrentPosition
 }

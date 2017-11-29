@@ -27,6 +27,9 @@ const initVariables = function () {
 //     }
 // }
 
+// onSetupGoogle is a function that grabs the user's location for data entry
+// in an HTML form id="searchLocation".  With Geolocation, no longer need user
+// to enter their location!
 const onSetupGoogle = function (event) {
   console.log('in ingredients-events onSetupGoogle')
   event.preventDefault()
@@ -68,14 +71,30 @@ const onAddIngredient = function (event) {
     .catch(ingredientsUi.addIngredientFailure)
 }
 
-const onGetIngredients = function () {
+// const onGetIngredients = function () { // this was the first version using form data input
+//   console.log('in ingredients events, onGetIngredients')
+//
+//   const currLocation = store.currentLocation
+//   console.log('currLocation is ', currLocation)
+//
+//   if (!currLocation) {
+//     $('#message').text('You need to enter your current location')
+//   } else {
+//     initVariables()
+//     ingredientsApi.getAllIngredients()
+//       .then(ingredientsUi.getIngredientsSuccess)
+//       .catch(ingredientsUi.getIngredientsFailure)
+//   }
+// }
+
+const onGetIngredients = function () { // this version uses Geolocation
   console.log('in ingredients events, onGetIngredients')
 
-  const currLocation = store.currentLocation
+  const currLocation = store.coords
   console.log('currLocation is ', currLocation)
 
   if (!currLocation) {
-    $('#message').text('You need to enter your current location')
+    $('#message').text('You need to Refresh your Current Location')
   } else {
     initVariables()
     ingredientsApi.getAllIngredients()
@@ -137,12 +156,20 @@ const onIngExternalLink = function (event) {
   window.open(event.target.id, 'http://www.google.com')
 }
 
+// const onIngExternalLink2 = function (event) {
+//   event.preventDefault()
+//   window.open(event.target.id, 'http://www.epicurious.com')
+// }
+
 const addHandlers = function () {
   $('#add-ingredient').on('submit', onAddIngredient)
   $('#getIngredients').on('click', onGetIngredients)
   $('.btn-secondary').on('click', OnCancelModal)
   $('.content').on('click', '.removeIngredientEvent', onDeleteIngredient)
   $('.content').on('click', '.ingExternalLink', onIngExternalLink)
+
+  // $('.content').on('click', '.ingExternalLink2', onIngExternalLink2)
+
   // $('.content').on('click', '.editMealEvent', onEditMeal)
   $('.content').on('click', '.editIngEvent', onEditIngEvent)
   // $('#edit-meal').on('submit', onMealUpdate)

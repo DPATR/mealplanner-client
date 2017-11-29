@@ -13,3 +13,14 @@
 .stroked {
   text-decoration: line-through;
 }
+
+body {
+  background-attachment: fixed;
+  background-color: white;
+  background-image: url(https://imgur.com/tw0Rv8p.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  clear: both;
+  text-align: center;
+}

@@ -32,11 +32,61 @@ const addIngredientFailure = function () {
   })
 }
 
+// const getIngredientsSuccess = function (data) { // this was the first version
+// // const getIngredientsSuccess = function () {
+//   console.log('in ingredients-ui.js getIngredientsSuccess')
+//   console.log('data is ', data)
+//   console.log('data.ingredients is ', data.ingredients)
+//
+//   $('#create-meal').addClass('hidden')
+//   $('#getIngredients').addClass('hidden')
+//   $('.topHeading2').addClass('hidden')
+//   $('#searchLocation').addClass('hidden')
+//   $('.topHeading3').removeClass('hidden')
+//   $('#create-ingredient').removeClass('hidden')
+//   $('#getMeals').removeClass('hidden')
+//
+//   const searchText = 'grocery stores'
+//   // const searchText2 = ' carrying '
+//   const location = store.currentLocation
+//   // const location = document.getElementById('googleLocationInput').value
+//
+//   console.log('searchText is ', searchText)
+//   // console.log('searchText2 is ', searchText2)
+//   console.log('location is ', location)
+//
+//   data.ingredients.map((ingredients) => {
+//     switch (ingredients.ingredient) {
+//     // case 'Book':
+//     //   experiences.url = 'https://www.goodreads.com/'
+//     //   experiences.label = 'Go to Goodread s'
+//     //   break
+//     // case 'Movie':
+//     //   experiences.url = 'https://www.fandango.com/'
+//     //   experiences.label = 'Go to Fandango'
+//     //   break
+//     // case 'Relaxation':
+//     //   experiences.url = 'https://www.tripadvisor.com/'
+//     //   experiences.label = 'Go to Tripadvisor to get started'
+//     //   break
+//       default:
+//         // ingredients.url = 'http://google.com/search?q=' + searchText + ' in ' + location + searchText2 + ingredients.ingredient
+//         ingredients.url = 'http://google.com/search?q=' + searchText + ' in ' + location + ' ' + ingredients.ingredient
+//         ingredients.label = 'Search Stores Near Me'
+//     }
+//   })
+//   $('#list-content').empty()
+//   const showEventsHtml = showEventsTemplate({ingredients: data.ingredients})
+//   $('.content').html(showEventsHtml)
+// }
+
 const getIngredientsSuccess = function (data) {
 // const getIngredientsSuccess = function () {
   console.log('in ingredients-ui.js getIngredientsSuccess')
   console.log('data is ', data)
   console.log('data.ingredients is ', data.ingredients)
+
+  console.log('store.coords is ', store.coords)
 
   $('#create-meal').addClass('hidden')
   $('#getIngredients').addClass('hidden')
@@ -46,13 +96,8 @@ const getIngredientsSuccess = function (data) {
   $('#create-ingredient').removeClass('hidden')
   $('#getMeals').removeClass('hidden')
 
-  const searchText = 'grocery stores'
-  // const searchText2 = ' carrying '
-  const location = store.currentLocation
-  // const location = document.getElementById('googleLocationInput').value
+  const location = store.coords
 
-  console.log('searchText is ', searchText)
-  // console.log('searchText2 is ', searchText2)
   console.log('location is ', location)
 
   data.ingredients.map((ingredients) => {
@@ -70,9 +115,14 @@ const getIngredientsSuccess = function (data) {
     //   experiences.label = 'Go to Tripadvisor to get started'
     //   break
       default:
-        // ingredients.url = 'http://google.com/search?q=' + searchText + ' in ' + location + searchText2 + ingredients.ingredient
-        ingredients.url = 'http://google.com/search?q=' + searchText + ' in ' + location + ' ' + ingredients.ingredient
-        ingredients.label = 'Search Stores Near Me'
+        // ingredients.url = 'http://google.com/search?q=' + searchText + ' in ' + location + ' ' + ingredients.ingredient
+        ingredients.url = 'https://www.google.com/maps/search/' + ingredients.ingredient + '/@' + location
+        ingredients.label = 'Search by Location'
+        // ingredients.url2 = 'https://www.epicurious.com/search/' + ingredients.ingredient
+        // ingredients.label2 = 'Search Epicurious Recipes'
+        // https://www.google.com/maps/search/shrimp/@42.3566423,-71.0557196,15z
+        console.log('url is ', ingredients.url)
+        // console.log('url is ', ingredients.url2)
     }
   })
   $('#list-content').empty()
