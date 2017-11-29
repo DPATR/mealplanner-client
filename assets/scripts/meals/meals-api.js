@@ -25,6 +25,21 @@ const addNewMeal = function (data) {
   })
 }
 
+const addMealIngredient = function (data) {
+  console.log('In meals-api addMealIngredient')
+
+  console.log('data is ', data)
+
+  return $.ajax({
+    url: config.apiOrigin + '/ingredients',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 const getAllMeals = function () {
   console.log('in meals-api getAllMeals')
 
@@ -78,6 +93,7 @@ const updateMeal = function (data) {
 
 module.exports = {
   addNewMeal,
+  addMealIngredient,
   getAllMeals,
   deleteMeal,
   showMealById,
