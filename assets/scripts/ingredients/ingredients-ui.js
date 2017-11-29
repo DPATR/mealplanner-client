@@ -12,7 +12,7 @@ const addIngredientSuccess = function (data) {
   $('#message').show()
   setTimeout(function () { $('#message').text('') }, 4000)
   $('#new-ingredient').modal('hide')
-  $('#nnew-ingredient').on('hidden.bs.modal', function () {
+  $('#new-ingredient').on('hidden.bs.modal', function () {
     $(this).find('form')[0].reset()
     $('.modal-message').text('')
   })
@@ -36,6 +36,7 @@ const getIngredientsSuccess = function (data) {
 // const getIngredientsSuccess = function () {
   console.log('in ingredients-ui.js getIngredientsSuccess')
   console.log('data is ', data)
+  console.log('data.ingredients is ', data.ingredients)
 
   $('#create-meal').addClass('hidden')
   $('#getIngredients').addClass('hidden')

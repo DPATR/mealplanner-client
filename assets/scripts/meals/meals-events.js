@@ -13,8 +13,30 @@ const initVariables = function () {
   store.entree = ''
   store.side1 = ''
   store.side2 = ''
-
   return true
+}
+
+const c = function (pos) {
+  const lat = pos.coords.latitude
+  const long = pos.coords.longitude
+  const coords = lat + ',' + long
+
+  // const myGrocery = 'pizza'
+  document.getElementById('google_map').setAttribute('src', 'https://maps.google.co.uk?q=' + coords + '&z=60&output=embed')
+
+  console.log('in c function, coords = ', coords)
+  // https://www.google.com/maps/place/Pizza@42.3746074,-70.989201
+  // https://www.google.com/maps/search/?api=1&query=pizza+seattle+wa
+  // https://www.google.com/maps/search/pizza/@42°21'10.9"N, 71°03'26.0"W
+  // https://www.google.com/maps/search/green beans/@42°21'10.8"N, 71°03'25.7"W
+  // https://www.google.com/maps/search/spanish omelet/@42°21'10.8"N, 71°03'25.7"W
+  // https://www.google.com/maps/search/italian bread/@42.3566423,-71.0557196,15z
+  // https://www.google.com/maps/search/baked haddock/@42.3566423,-71.0557196,15z
+  store.coords = coords
+}
+const onGetCurrentPosition = function (event) {
+  console.log('in onGetCurrentPosition')
+  navigator.geolocation.getCurrentPosition(c)
 }
 
 const onAddMeal = function (event) {
@@ -99,6 +121,7 @@ const onExternalLink = function (event) {
 const addHandlers = function () {
   $('#add-meal').on('submit', onAddMeal)
   $('#getMeals').on('click', onGetMeals)
+  $('#get_location').on('click', onGetCurrentPosition)
   $('.btn-secondary').on('click', OnCancelModal)
   $('.content').on('click', '.removeMealEvent', onDeleteMeal)
   $('.content').on('click', '.externalLink', onExternalLink)

@@ -12,6 +12,21 @@ const initVariables = function () {
   return true
 }
 
+// function showPosition(position) {
+//     x.innerHTML = "Latitude: " + position.coords.latitude +
+//     "<br>Longitude: " + position.coords.longitude
+// }
+//
+// var x = document.getElementById("demo")
+//
+// function getLocation() {
+//     if (navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition(showPosition);
+//     } else {
+//         x.innerHTML = "Geolocation is not supported by this browser.";
+//     }
+// }
+
 const onSetupGoogle = function (event) {
   console.log('in ingredients-events onSetupGoogle')
   event.preventDefault()
