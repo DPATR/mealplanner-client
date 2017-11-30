@@ -1,61 +1,76 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+# DESCRIPTION
 
-# browser-template
+This is an application designed to be used for Meal planning, especially when traveling.  Components include a Meal Plan that includes all meals as well as a Grocery List that can include all ingredients that may be purchased to prepare meals.
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+Each user will have their own collection of meals that cannot be viewed by other system users.  Each user will have their own collection of ingredients that cannot be viewed by other system users.
 
-## Installation
+Authorization:
 
-1.  [Download](../../archive/master.zip) this template.
-1.  Unzip and rename the template directory.
-1.  Empty [`README.md`](README.md) and fill with your own content.
-1.  Replace all instances of `ga-wdi-boston.browser-template` with the name of your project.
-1.  Move into the new project and `git init`
-1.  Add all of the files in your project with the command `git add -A`
-  -   *Note:* THIS IS THE ONLY TIME YOU SHOULD RUN THIS COMMAND
-1.  Commit all of your files with the command `git commit`
-  -   Your commit title should read `Initial commit`
-1.  Install dependencies with `npm install`.
+When accessing the application for the first time, the person must Sign Up with an email address and password and then Sign In.
 
-## Structure
+An option to Change Password will be available once you are signed in.
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/index.js`](assets/scripts/index.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
+A system user should Sign Out before exiting the application.
 
-Developers should set `config.apiOrigins.production` (and
-`config.apiOrigins.development` if it differs from the default).  With
-`apiOrigins` set, developers may rely on `config.apiOrigin` as the base for API
-URLs.
+Grocery List:
 
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss).
+Generates a list of existing Grocery Items.  Functionality includes Add, Edit and Remove Grocery Items.
 
-Developers should use [getFormFields](forms.md) to retrieve form data to send to
-an API.
+Links include:
+- Search Epicurious Recipe site using the Grocery Item as a search parameter
+- Search by Location uses the Google Maps service, the system user's current location coordinates and a search
+  string.
 
-To deploy a browser-template based SPA, run `grunt deploy`.
+All search results are rendered in a browser window.
 
-## Tasks
+View Menu:
 
-Developers should run these often!
+Generates a list of existing Meals.  Functionality includes Add, Edit and Remove Meals.
 
--   `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
--   `grunt make-standard`: reformats all your code in the JavaScript Standard Style
--   `grunt <server|serve|s>`: generates bundles, watches, and livereloads
--   `grunt test`: runs any automated tests, depends on `grunt build`
--   `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
+Links include:
+- Search Epicurious Recipe site using the Meal Entree as a search parameter
 
-## [License](LICENSE)
+All search results are rendered in a browser window.
 
-1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
-1.  All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+Author: Denise Patriquin Date: 12/1/2017
+
+# VIEW ONLINE
+
+Client Meal Planner Application: https://dpatr.github.io/mealplanner-client
+
+API Meal Planner Application: https://ancient-gorge-70615.herokuapp.com
+
+API GitHub Repository: https://github.com/DPATR/mealplanner-api
+
+## Technologies
+
+1. JavaScript
+2. jQuery for DOM manipulation and event handling
+3. AJAX for interacting with an API
+4. CSS for styles
+5. Bootstrap
+6. Handlebars for templating
+7. Modal dialog box
+8. Google Geolocation
+9. Google Maps Service
+
+## Planning and Approach
+
+Original Wireframe: https://imgur.com/GxHKhVT
+
+User Stories: https://imgur.com/irUjwzR
+
+Approach:
+
+I used a top-down analysis for this project. After doing some research on popular Menu Planning applications, I designed my own wireframe that would be appropriate for my intended use.
+
+The API was designed and tested with authentication and data first. The Client was then developed and tested using the API structure.
+
+For the Client, I began by writing pseudo-code and then built code modules.
+
+I used test scenarios and each module was unit tested. I followed with integration and end-to-end testing for the application as a whole.
+
+## Future Enhancements
+
+1. Add calendar functionality for planning weekly menus in the future.
+2. Integrate meal categories to enable more specific search criteria.

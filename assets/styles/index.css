@@ -14,15 +14,21 @@
   text-decoration: line-through;
 }
 
+.get-lists-btns {
+  text-align: center;
+  margin: auto;
+}
+
 #getIngredients {
   display: inline-block;
   float:left;
-  /*text-align: center;*/
+  text-align: center;
 }
 
 #getMeals {
   display:inline-block;
   float: left;
+
   /*margin: 0 auto 0 auto;*/
   /*text-align: center;*/
   /*clear: left;*/
@@ -31,10 +37,14 @@
 #create-meal {
   /*border:2px solid gray;*/
   /*clear:left;*/
+
   float:left;
+
   /*margin: 2px;*/
+
   margin-left: 4px;
-  /*text-align: center;*/
+  text-align: center;
+
   /*padding: 2px;*/
   /*margin: auto;*/
 }
