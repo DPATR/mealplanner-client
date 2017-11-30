@@ -22,7 +22,7 @@ const c = function (pos) {
   const coords = lat + ',' + long
 
   // const myGrocery = 'pizza'
-  document.getElementById('google_map').setAttribute('src', 'https://maps.google.co.uk?q=' + coords + '&z=60&output=embed')
+  document.getElementById('google_map').setAttribute('src', 'https://maps.google.co.uk?q=' + coords + '&z=15&output=embed')
 
   console.log('in c function, coords = ', coords)
   // https://www.google.com/maps/place/Pizza@42.3746074,-70.989201
@@ -38,6 +38,7 @@ const c = function (pos) {
 const onGetCurrentPosition = function (event) {
   console.log('in onGetCurrentPosition')
   navigator.geolocation.getCurrentPosition(c)
+  return false
 }
 
 const onAddMeal = function (event) {

@@ -5,10 +5,14 @@
       {{else}}
         <p id="ingredmsg">You have no groceries to display!</p>
       {{/if}}
+      <div>
       <button class="removeIngredientEvent meal-button" id="{{ingredient.id}}">Remove</button>
-      <button class="editIngEvent ingredient-button" id="{{ingredient.id}}">Edit</button>
       <button class="ingExternalLink" id="{{ingredient.url}}">{{ingredient.label}}</button>
-      <button class="ingExternalLink2" id="{{ingredient.url}}">{{ingredient.label}}</button>
+      </div>
+      <div>
+      <button class="editIngEvent ingredient-button" id="{{ingredient.id}}">Edit</button>
+      <button class="ingExternalLink2" id="{{ingredient.url2}}">{{ingredient.label2}}</button>
+      </div>
       <br>
       <br>
     </div>

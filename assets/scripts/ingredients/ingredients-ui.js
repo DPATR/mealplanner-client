@@ -118,11 +118,11 @@ const getIngredientsSuccess = function (data) {
         // ingredients.url = 'http://google.com/search?q=' + searchText + ' in ' + location + ' ' + ingredients.ingredient
         ingredients.url = 'https://www.google.com/maps/search/' + ingredients.ingredient + '/@' + location
         ingredients.label = 'Search by Location'
-        // ingredients.url2 = 'https://www.epicurious.com/search/' + ingredients.ingredient
-        // ingredients.label2 = 'Search Epicurious Recipes'
+        ingredients.url2 = 'https://www.epicurious.com/search/' + ingredients.ingredient
+        ingredients.label2 = 'Search Epicurious Recipes'
         // https://www.google.com/maps/search/shrimp/@42.3566423,-71.0557196,15z
         console.log('url is ', ingredients.url)
-        // console.log('url is ', ingredients.url2)
+        console.log('url is ', ingredients.url2)
     }
   })
   $('#list-content').empty()

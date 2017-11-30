@@ -17,10 +17,71 @@
 body {
   background-attachment: fixed;
   background-color: white;
-  background-image: url(https://imgur.com/tw0Rv8p.jpg);
+  /*background-image: url(https://i.imgur.com/76TYS7S.jpg);*/
+  background-image: url(https://i.imgur.com/yeUuFBR.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   clear: both;
   text-align: center;
+}
+
+/*.myFloat_Left {
+    float: left;
+}*/
+
+#google_map {
+  border:2px solid gray;
+  clear: right;
+  float: left;
+  margin-top: 0px;
+}
+
+/* width and height settings force google map to be left aligned */
+.element {
+  border:2px solid gray;
+  width: 400px;
+  height: 300px;
+}
+
+.topHeading2 {
+  /*border:2px solid gray;*/
+  clear:left;
+  /*float: left;*/
+  margin: auto;
+  width: 300px;
+}
+
+.get-ing-btn {
+  border:2px solid gray;
+  clear:both;
+  margin: auto;
+  width: 200px;
+}
+
+.get-menu-btn {
+  border:2px solid gray;
+  clear:left;
+  margin: auto;
+  /*margin-left: 0px;*/
+  /*padding: 0px;*/
+  width: 200px;
+}
+
+#create-meal {
+  border:2px solid gray;
+  clear:left;
+  margin: auto;
+}
+
+.topHeading3 {
+  /*border:2px solid gray;*/
+  clear:left;
+  /*float: left;*/
+  margin: auto;
+  width: 300px;
+}
+
+#content {
+  border:2px solid gray;
 }

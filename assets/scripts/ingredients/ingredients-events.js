@@ -156,10 +156,10 @@ const onIngExternalLink = function (event) {
   window.open(event.target.id, 'http://www.google.com')
 }
 
-// const onIngExternalLink2 = function (event) {
-//   event.preventDefault()
-//   window.open(event.target.id, 'http://www.epicurious.com')
-// }
+const onIngExternalLink2 = function (event) {
+  event.preventDefault()
+  window.open(event.target.id, 'http://www.epicurious.com')
+}
 
 const addHandlers = function () {
   $('#add-ingredient').on('submit', onAddIngredient)
@@ -168,7 +168,7 @@ const addHandlers = function () {
   $('.content').on('click', '.removeIngredientEvent', onDeleteIngredient)
   $('.content').on('click', '.ingExternalLink', onIngExternalLink)
 
-  // $('.content').on('click', '.ingExternalLink2', onIngExternalLink2)
+  $('.content').on('click', '.ingExternalLink2', onIngExternalLink2)
 
   // $('.content').on('click', '.editMealEvent', onEditMeal)
   $('.content').on('click', '.editIngEvent', onEditIngEvent)
