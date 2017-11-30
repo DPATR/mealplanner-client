@@ -14,11 +14,49 @@
   text-decoration: line-through;
 }
 
+#getIngredients {
+  display: inline-block;
+  float:left;
+  /*text-align: center;*/
+}
+
+#getMeals {
+  display:inline-block;
+  float: left;
+  /*margin: 0 auto 0 auto;*/
+  /*text-align: center;*/
+  /*clear: left;*/
+}
+
+#create-meal {
+  /*border:2px solid gray;*/
+  /*clear:left;*/
+  float:left;
+  /*margin: 2px;*/
+  margin-left: 4px;
+  /*text-align: center;*/
+  /*padding: 2px;*/
+  /*margin: auto;*/
+}
+
+#create-ingredient {
+  float: left;
+  margin-left: 4px;
+  /*text-align: center;*/
+}
+
+/*#container {*/
+  /*text-align: center;*/
+  /*align-content: center;*/
+/*}*/
+
 body {
   background-attachment: fixed;
   background-color: white;
+  /*background-image: url(https://i.imgur.com/yeUuFBR.jpg);*/
   /*background-image: url(https://i.imgur.com/76TYS7S.jpg);*/
-  background-image: url(https://i.imgur.com/yeUuFBR.jpg);
+  /*background-image: url(https://i.imgur.com/7BR3MFR.jpg);*/
+  background-image: url(https://i.imgur.com/VEpxK4Q.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -32,56 +70,65 @@ body {
 
 #google_map {
   border:2px solid gray;
-  clear: right;
-  float: left;
+  display: none;
+  /*clear: right;*/
+  /*float: left;*/
   margin-top: 0px;
 }
+
+/* I commented out all of this below to try to center map */
 
 /* width and height settings force google map to be left aligned */
 .element {
   border:2px solid gray;
-  width: 400px;
-  height: 300px;
+  /*width: 400px;*/
+  /*height: 300px;*/
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
-.topHeading2 {
+/*.topHeading2 {*/
   /*border:2px solid gray;*/
-  clear:left;
+  /*clear:left;*/
   /*float: left;*/
-  margin: auto;
-  width: 300px;
-}
+  /*margin: auto;*/
+  /*width: 300px;*/
+/*}*/
 
-.get-ing-btn {
-  border:2px solid gray;
-  clear:both;
-  margin: auto;
-  width: 200px;
-}
+/*.get-ing-btn {*/
+  /*border:2px solid gray;*/
+  /*clear:both;*/
+  /*margin: auto;*/
+  /*width: 200px;*/
+/*}*/
 
-.get-menu-btn {
-  border:2px solid gray;
-  clear:left;
-  margin: auto;
+/*.get-menu-btn {*/
+  /*border:2px solid gray;*/
+  /*clear:left;*/
+  /*margin: auto;*/
   /*margin-left: 0px;*/
   /*padding: 0px;*/
-  width: 200px;
-}
+  /*width: 200px;*/
+/*}*/
 
-#create-meal {
-  border:2px solid gray;
-  clear:left;
-  margin: auto;
-}
-
-.topHeading3 {
+/*#create-meal {*/
   /*border:2px solid gray;*/
-  clear:left;
+  /*clear:left;*/
+  /*margin: auto;*/
+/*}*/
+
+/* I commented out everything below to try to center map - this is what worked! */
+
+/*.topHeading3 {*/
+  /*border:2px solid gray;*/
+  /*clear:left;*/
   /*float: left;*/
-  margin: auto;
-  width: 300px;
-}
+  /*margin: auto;*/
+  /*width: 300px;*/
+/*}*/
 
 #content {
   border:2px solid gray;
+  clear: both;
+  margin-top: 4px;
 }

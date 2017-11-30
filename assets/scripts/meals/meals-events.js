@@ -33,6 +33,10 @@ const c = function (pos) {
   // https://www.google.com/maps/search/italian bread/@42.3566423,-71.0557196,15z
   // https://www.google.com/maps/search/baked haddock/@42.3566423,-71.0557196,15z
   // https://www.google.com/maps/search/shrimp/@42.3566423,-71.0557196,15z
+
+  // get my location on google maps:
+  // https://www.google.com/maps/search/?api=1&query=42°20'49.2"N ,71°05'19.9"W
+
   store.coords = coords
 }
 const onGetCurrentPosition = function (event) {

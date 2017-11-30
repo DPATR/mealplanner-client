@@ -134,14 +134,14 @@
         <h2 class="topHeading2 hidden">This Week's Menu</h2>
         <h2 class="topHeading3 hidden">Grocery List</h2>
 
-        <div class="get-ing-btn">
+        <!-- <div class="get-ing-btn"> -->
           <!-- View Grocery List -->
-          <button id="getIngredients" class="btn btn-primary hidden">View Grocery List</button>
-        </div>
-        <div class="get-menu-btn">
+          <!-- <button id="getIngredients" class="btn btn-primary hidden">View Grocery List</button> -->
+        <!-- </div> -->
+        <!-- <div class="get-menu-btn"> -->
           <!-- View Meals Menu -->
-          <button id="getMeals" class="btn btn-primary hidden">View Menu</button>
-        </div>
+          <!-- <button id="getMeals" class="btn btn-primary hidden">View Menu</button> -->
+        <!-- </div> -->
 
         <!-- Capture Current Location -->
         <!-- </div> -->
@@ -191,6 +191,7 @@
               navigator.geolocation.getCurrentPosition(c);
             }
           </script> -->
+
         <!-- <div class="get-add-btns"> -->
           <!-- View Grocery List -->
           <!-- <button id="getIngredients" class="btn btn-primary hidden">View Grocery List</button> -->
@@ -198,6 +199,22 @@
           <!-- View Meals Menu -->
           <!-- <button id="getMeals" class="btn btn-primary hidden">View Menu</button> -->
         <!-- </div> -->
+
+        <!-- <div class="get-ing-btn"> -->
+          <!-- View Grocery List -->
+          <!-- <button id="getIngredients" class="btn btn-primary hidden">View Grocery List</button> -->
+        <!-- </div> -->
+        <!-- <div class="get-menu-btn"> -->
+          <!-- View Meals Menu -->
+          <!-- <button id="getMeals" class="btn btn-primary hidden">View Menu</button> -->
+        <!-- </div> -->
+
+        <div id="container" class="get-lists-btns">
+          <!-- View Grocery List -->
+          <button id="getIngredients" class="btn btn-primary hidden">View Grocery List</button>
+          <!-- View Meals Menu -->
+          <button id="getMeals" class="btn btn-primary hidden">View Menu</button>
+        </div>
 
         <!-- Create Meal Modal -->
         <button type="button" id="create-meal" class="btn btn-primary hidden" data-toggle="modal" data-target="#new-meal">Add A Meal</button>

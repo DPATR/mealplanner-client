@@ -44,6 +44,8 @@ const signInSuccess = function (data) {
   $('#log-out').removeClass('hidden')
   $('#create-meal').removeClass('hidden')
   $('#getIngredients').removeClass('hidden')
+  $('#google_map').show()
+  $('body').css('background-image', 'none')
   // $('#panel').removeClass('hidden')
 
   console.log('in auth-ui.js about to call getAllMeals')
@@ -94,6 +96,8 @@ const signOutSuccess = function (data) {
   $('#getMeals').addClass('hidden')
   $('.topHeading2').addClass('hidden')
   $('.topHeading3').addClass('hidden')
+  $('#google_map').hide()
+  $('body').css('background-image', 'url("https://i.imgur.com/7BR3MFR.jpg")')
   // $('#panel').addClass('hidden')
   $('.content').empty()
 }
