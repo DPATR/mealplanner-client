@@ -8,7 +8,7 @@ const store = require('../store')
 
 // initialize variables used for messages on screen
 const initVariables = function () {
-  $('#message').text('')
+  // $('#message').text('')
   $('.modal-message').text('')
   store.entree = ''
   store.side1 = ''

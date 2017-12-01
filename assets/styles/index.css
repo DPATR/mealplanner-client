@@ -36,7 +36,7 @@ a.hover:hover {
 
 .handlebarsDay {
   color: #6f0404;
-  font-size: 45px;
+  font-size: 40px;
   padding-left: 30px;
   text-align: justify;
 }
@@ -226,4 +226,8 @@ body {
   background-color: #cecece;
   color: #6f0404;
   font-size: 19px;
+}
+
+.message-box {
+  color: red;
 }
