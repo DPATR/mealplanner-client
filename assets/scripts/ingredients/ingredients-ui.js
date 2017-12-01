@@ -6,7 +6,7 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 const store = require('../store')
 
 const addIngredientSuccess = function (data) {
-  console.log('in ingredients-ui addIngredientSuccess')
+  // console.log('in ingredients-ui addIngredientSuccess')
 
   $('#message').text('Your new grocery item was added!')
   $('#message').show()
@@ -32,61 +32,13 @@ const addIngredientFailure = function () {
   })
 }
 
-// const getIngredientsSuccess = function (data) { // this was the first version
-// // const getIngredientsSuccess = function () {
-//   console.log('in ingredients-ui.js getIngredientsSuccess')
-//   console.log('data is ', data)
-//   console.log('data.ingredients is ', data.ingredients)
-//
-//   $('#create-meal').addClass('hidden')
-//   $('#getIngredients').addClass('hidden')
-//   $('.topHeading2').addClass('hidden')
-//   $('#searchLocation').addClass('hidden')
-//   $('.topHeading3').removeClass('hidden')
-//   $('#create-ingredient').removeClass('hidden')
-//   $('#getMeals').removeClass('hidden')
-//
-//   const searchText = 'grocery stores'
-//   // const searchText2 = ' carrying '
-//   const location = store.currentLocation
-//   // const location = document.getElementById('googleLocationInput').value
-//
-//   console.log('searchText is ', searchText)
-//   // console.log('searchText2 is ', searchText2)
-//   console.log('location is ', location)
-//
-//   data.ingredients.map((ingredients) => {
-//     switch (ingredients.ingredient) {
-//     // case 'Book':
-//     //   experiences.url = 'https://www.goodreads.com/'
-//     //   experiences.label = 'Go to Goodread s'
-//     //   break
-//     // case 'Movie':
-//     //   experiences.url = 'https://www.fandango.com/'
-//     //   experiences.label = 'Go to Fandango'
-//     //   break
-//     // case 'Relaxation':
-//     //   experiences.url = 'https://www.tripadvisor.com/'
-//     //   experiences.label = 'Go to Tripadvisor to get started'
-//     //   break
-//       default:
-//         // ingredients.url = 'http://google.com/search?q=' + searchText + ' in ' + location + searchText2 + ingredients.ingredient
-//         ingredients.url = 'http://google.com/search?q=' + searchText + ' in ' + location + ' ' + ingredients.ingredient
-//         ingredients.label = 'Search Stores Near Me'
-//     }
-//   })
-//   $('#list-content').empty()
-//   const showEventsHtml = showEventsTemplate({ingredients: data.ingredients})
-//   $('.content').html(showEventsHtml)
-// }
-
 const getIngredientsSuccess = function (data) {
 // const getIngredientsSuccess = function () {
-  console.log('in ingredients-ui.js getIngredientsSuccess')
-  console.log('data is ', data)
-  console.log('data.ingredients is ', data.ingredients)
+  // console.log('in ingredients-ui.js getIngredientsSuccess')
+  // console.log('data is ', data)
+  // console.log('data.ingredients is ', data.ingredients)
 
-  console.log('store.coords is ', store.coords)
+  // console.log('store.coords is ', store.coords)
 
   $('#create-meal').addClass('hidden')
   $('#getIngredients').addClass('hidden')
@@ -98,7 +50,7 @@ const getIngredientsSuccess = function (data) {
 
   const location = store.coords
 
-  console.log('location is ', location)
+  // console.log('location is ', location)
 
   data.ingredients.map((ingredients) => {
     switch (ingredients.ingredient) {
@@ -119,10 +71,10 @@ const getIngredientsSuccess = function (data) {
         ingredients.url2 = 'https://www.epicurious.com/search/' + ingredients.ingredient
         ingredients.label2 = 'Recipes '
         ingredients.url = 'https://www.google.com/maps/search/' + ingredients.ingredient + '/@' + location
-        ingredients.label = 'Location '
+        ingredients.label = 'By Location '
         // https://www.google.com/maps/search/shrimp/@42.3566423,-71.0557196,15z
-        console.log('url is ', ingredients.url)
-        console.log('url is ', ingredients.url2)
+        // console.log('url is ', ingredients.url)
+        // console.log('url is ', ingredients.url2)
     }
   })
   $('#list-content').empty()
@@ -147,14 +99,14 @@ const deleteIngredientFailure = function () {
 }
 
 const onIngredientUpdate = function (event) {
-  console.log('in ingredients-ui.js onIngredientUpdate')
+  // console.log('in ingredients-ui.js onIngredientUpdate')
 
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('event.target is', event.target)
-  console.log('event.target.id is', event.target.id)
-  console.log('data is ', data)
-  console.log('data.ingredient is ', data.ingredient)
+  // console.log('event.target is', event.target)
+  // console.log('event.target.id is', event.target.id)
+  // console.log('data is ', data)
+  // console.log('data.ingredient is ', data.ingredient)
 
   // if (!data.experience.hasOwnProperty('completed')) {
   //   data.experience.completed = false
@@ -165,7 +117,7 @@ const onIngredientUpdate = function (event) {
 }
 
 const onUpdateSuccess = function () {
-  console.log('in ingredients-ui.js onUpdateSuccess')
+  // console.log('in ingredients-ui.js onUpdateSuccess')
 
   $('#message').text('Your grocery item was updated!')
   $('#message').show()

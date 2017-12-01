@@ -4,12 +4,6 @@ const config = require('../config')
 const store = require('../store')
 
 const addNewMeal = function (data) {
-  console.log('In meals-api addNewMeal')
-
-  console.log('In meals-api addNewMeal, data is ', data)
-  console.log('data.meal.entree is ', data.meal.entree)
-  console.log('data.meal.entree is ', data.meal.side1)
-  console.log('data.meal.entree is ', data.meal.side2)
 
   store.entree = data.meal.entree
   store.side1 = data.meal.side1
@@ -26,9 +20,6 @@ const addNewMeal = function (data) {
 }
 
 const addMealIngredient = function (data) {
-  console.log('In meals-api addMealIngredient')
-
-  console.log('data is ', data)
 
   return $.ajax({
     url: config.apiOrigin + '/ingredients',
@@ -41,7 +32,7 @@ const addMealIngredient = function (data) {
 }
 
 const getAllMeals = function () {
-  console.log('in meals-api getAllMeals')
+  // console.log('in meals-api getAllMeals')
 
   return $.ajax({
     url: config.apiOrigin + '/meals',

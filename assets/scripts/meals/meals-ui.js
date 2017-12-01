@@ -11,37 +11,37 @@ const store = require('../store')
 const addIngredientsFromMeal = function () {
   let newGroceryItem = false
 
-  console.log('newGroceryItem is ', newGroceryItem)
+  // console.log('newGroceryItem is ', newGroceryItem)
 
   if (store.entree) {
     const newElement = store.entree
-    console.log('store.entree is ', newElement)
+    // console.log('store.entree is ', newElement)
     newGroceryItem = true
     buildNewGroceryItem(newElement)
   }
   if (store.side1) {
     const newElement = store.side1
-    console.log('store.side1 is ', newElement)
+    // console.log('store.side1 is ', newElement)
     newGroceryItem = true
     buildNewGroceryItem(newElement)
   }
   if (store.side2) {
     const newElement = store.side2
-    console.log('store.side2 is ', newElement)
+    // console.log('store.side2 is ', newElement)
     newGroceryItem = true
     buildNewGroceryItem(newElement)
   }
 }
 //
 const buildNewGroceryItem = function (element) {
-  console.log('in buildNewGroceryItem, element = ', element)
+  // console.log('in buildNewGroceryItem, element = ', element)
 
   const newIngredientData = {
     'ingredient': {
       'ingredient': element
     }
   }
-  console.log('newIngredientData is ', newIngredientData)
+  // console.log('newIngredientData is ', newIngredientData)
 
   mealsApi.addMealIngredient(newIngredientData)
     .then(addMealIngredientSuccess)
@@ -49,7 +49,7 @@ const buildNewGroceryItem = function (element) {
 }
 
 const addMealIngredientSuccess = function (data) {
-  console.log('in meals-ui addMealIngredientsSuccess')
+  // console.log('in meals-ui addMealIngredientsSuccess')
 
   $('#message').text('Your new meal item was added!')
   $('#message').show()
@@ -68,7 +68,7 @@ const addMealIngredientFailure = function () {
 }
 
 const addMealSuccess = function (data) {
-  console.log('in meals-ui addMealSuccess')
+  // console.log('in meals-ui addMealSuccess')
 
   $('#message').text('Your new meal was added!')
   $('#message').show()
@@ -137,7 +137,7 @@ const getMealsFailure = function () {
 }
 
 const deleteMealSuccess = function () {
-  console.log('in deleteMealSuccess')
+  // console.log('in deleteMealSuccess')
 
   mealsApi.getAllMeals()
     .then(getMealsSuccess)
@@ -145,7 +145,7 @@ const deleteMealSuccess = function () {
 }
 
 const deleteMealFailure = function () {
-  console.log('in deleteMealFailure')
+  // console.log('in deleteMealFailure')
 
   $('#message').show()
   $('#message').text('Unexpected error deleting your meal. Please try again.')
@@ -157,14 +157,6 @@ const onMealUpdate = function (event) {
 
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('event.target is', event.target)
-  console.log('event.target.id is', event.target.id)
-  console.log('data is ', data)
-  console.log('data.meal is ', data.meal)
-  // const currentMealID = $(this).data('id')
-  // console.log(this.data('id'))
-  // console.log('currentMealID is ', currentMealID)
-
   // if (!data.experience.hasOwnProperty('completed')) {
   //   data.experience.completed = false
   // }

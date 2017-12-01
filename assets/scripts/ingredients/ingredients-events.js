@@ -12,56 +12,31 @@ const initVariables = function () {
   return true
 }
 
-// function showPosition(position) {
-//     x.innerHTML = "Latitude: " + position.coords.latitude +
-//     "<br>Longitude: " + position.coords.longitude
-// }
-//
-// var x = document.getElementById("demo")
-//
-// function getLocation() {
-//     if (navigator.geolocation) {
-//         navigator.geolocation.getCurrentPosition(showPosition);
-//     } else {
-//         x.innerHTML = "Geolocation is not supported by this browser.";
-//     }
-// }
-
 // onSetupGoogle is a function that grabs the user's location for data entry
 // in an HTML form id="searchLocation".  With Geolocation, no longer need user
 // to enter their location!
 const onSetupGoogle = function (event) {
-  console.log('in ingredients-events onSetupGoogle')
+  // console.log('in ingredients-events onSetupGoogle')
   event.preventDefault()
-  console.log('in ingredients-events onSearchGoogle, event.target is ', event.target)
-
-  // const searchText = 'grocery stores'
-  // const searchText2 = ' carrying '
-
-  // const name = 'Green Beans'
-  // console.log('name is ', name)
+  // console.log('in ingredients-events onSearchGoogle, event.target is ', event.target)
 
   const location = this[0].value
   store.currentLocation = location
   // console.log('in ingredients-events, location is ', location)
-  const location2 = store.currentLocation
-  console.log('in ingredients-events, store.currentlocation is ', location2)
-
-  // grocery stores in New Bedford, MA carrying Green Beans
-  // window.open('http://google.com/search?q=' + searchText + ' in ' + location + searchText2 + name)
-
+  // const location2 = store.currentLocation
+  // console.log('in ingredients-events, store.currentlocation is ', location2)
   document.getElementById('googleLocationInput').value = ''
 }
 
 const onOpenHtml = function (event) {
-  console.log('in ingredients-events onOpenHtml')
+  // console.log('in ingredients-events onOpenHtml')
   event.preventDefault()
   const url = $(this).attr('href')
   window.open(url)
 }
 
 const onAddIngredient = function (event) {
-  console.log('in ingredients events, onAddIngredient')
+  // console.log('in ingredients events, onAddIngredient')
 
   event.preventDefault()
   const data = getFormFields(this)
@@ -71,27 +46,11 @@ const onAddIngredient = function (event) {
     .catch(ingredientsUi.addIngredientFailure)
 }
 
-// const onGetIngredients = function () { // this was the first version using form data input
-//   console.log('in ingredients events, onGetIngredients')
-//
-//   const currLocation = store.currentLocation
-//   console.log('currLocation is ', currLocation)
-//
-//   if (!currLocation) {
-//     $('#message').text('You need to enter your current location')
-//   } else {
-//     initVariables()
-//     ingredientsApi.getAllIngredients()
-//       .then(ingredientsUi.getIngredientsSuccess)
-//       .catch(ingredientsUi.getIngredientsFailure)
-//   }
-// }
-
 const onGetIngredients = function () { // this version uses Geolocation
-  console.log('in ingredients events, onGetIngredients')
+  // console.log('in ingredients events, onGetIngredients')
 
   const currLocation = store.coords
-  console.log('currLocation is ', currLocation)
+  // console.log('currLocation is ', currLocation)
 
   if (!currLocation) {
     $('#message').text('You need to Refresh your Current Location')
@@ -113,12 +72,12 @@ const OnCancelModal = function () {
 }
 
 const onDeleteIngredient = function (event) {
-  console.log('In ingredients-events.js')
+  // console.log('In ingredients-events.js')
 
   const ingredientId = event.target.getAttribute('id')
   // event.target is <button class="delete" type="button" data-id="9">
 
-  console.log('In ingredients-events, ingredient id is ', ingredientId)
+  // console.log('In ingredients-events, ingredient id is ', ingredientId)
 
   ingredientsApi.deleteIngredient(ingredientId)
     .then(ingredientsUi.deleteIngredientSuccess)
@@ -126,8 +85,8 @@ const onDeleteIngredient = function (event) {
 }
 
 const onEditIngEvent = function (event) {
-  console.log('in ingredients-events.js event.target is ', event.target)
-  console.log('event.target.id is ', event.target.id)
+  // console.log('in ingredients-events.js event.target is ', event.target)
+  // console.log('event.target.id is ', event.target.id)
 
   ingredientsApi.showIngredientById(event.target.id)
     .then(onShowIdForEditSuccess)
@@ -136,7 +95,7 @@ const onEditIngEvent = function (event) {
 
 const onShowIdForEditSuccess = function (response) {
   // $('#message').text('Single Record loaded')
-  console.log('response is ', response)
+  // console.log('response is ', response)
 
   $('#edit-ingitem').modal('show')
   $('#ingredient').val(response.ingredient.ingredient)

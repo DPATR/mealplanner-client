@@ -23,30 +23,17 @@ const c = function (pos) {
 
   // const myGrocery = 'pizza'
   document.getElementById('google_map').setAttribute('src', 'https://maps.google.co.uk?q=' + coords + '&z=15&output=embed')
-
-  console.log('in c function, coords = ', coords)
-  // https://www.google.com/maps/place/Pizza@42.3746074,-70.989201
-  // https://www.google.com/maps/search/?api=1&query=pizza+seattle+wa
-  // https://www.google.com/maps/search/pizza/@42°21'10.9"N, 71°03'26.0"W
-  // https://www.google.com/maps/search/green beans/@42°21'10.8"N, 71°03'25.7"W
-  // https://www.google.com/maps/search/spanish omelet/@42°21'10.8"N, 71°03'25.7"W
-  // https://www.google.com/maps/search/italian bread/@42.3566423,-71.0557196,15z
-  // https://www.google.com/maps/search/baked haddock/@42.3566423,-71.0557196,15z
-  // https://www.google.com/maps/search/shrimp/@42.3566423,-71.0557196,15z
-
-  // get my location on google maps:
-  // https://www.google.com/maps/search/?api=1&query=42°20'49.2"N ,71°05'19.9"W
-
+  // console.log('in c function, coords = ', coords)
   store.coords = coords
 }
 const onGetCurrentPosition = function (event) {
-  console.log('in onGetCurrentPosition')
+  // console.log('in onGetCurrentPosition')
   navigator.geolocation.getCurrentPosition(c)
   return false
 }
 
 const onAddMeal = function (event) {
-  console.log('in meals events, onAddMeal')
+  // console.log('in meals events, onAddMeal')
 
   event.preventDefault()
   const data = getFormFields(this)
@@ -90,8 +77,6 @@ const onDeleteMeal = function (event) {
 }
 
 const onEditEvent = function (event) {
-  // console.log('in meals-events.js event.target is ', event.target)
-  // console.log('event.target.id is ', event.target.id)
 
   mealsApi.showMealById(event.target.id)
     .then(onShowIdForEditSuccess)

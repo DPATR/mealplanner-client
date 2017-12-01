@@ -4,7 +4,7 @@ const config = require('../config')
 const store = require('../store')
 
 const signUp = function (data) {
-  console.log('in signUp api.js')
+  // console.log('in signUp api.js')
 
   return $.ajax({
     url: config.apiOrigin + '/sign-up',
@@ -14,7 +14,7 @@ const signUp = function (data) {
 }
 
 const signIn = function (data) {
-  console.log('in signIn api.js')
+  // console.log('in signIn api.js')
 
   return $.ajax({
     url: config.apiOrigin + '/sign-in',
@@ -24,7 +24,7 @@ const signIn = function (data) {
 }
 
 const changePassword = function (data) {
-  console.log('in changePassword api.js')
+  // console.log('in changePassword api.js')
 
   return $.ajax({
     url: config.apiOrigin + '/change-password/' + store.user.id,
@@ -37,7 +37,7 @@ const changePassword = function (data) {
 }
 
 const signOut = function () {
-  console.log('in signOut api.js')
+  // console.log('in signOut api.js')
 
   return $.ajax({
     url: config.apiOrigin + '/sign-out/' + store.user.id,

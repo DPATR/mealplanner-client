@@ -19,7 +19,6 @@ a.hover:hover {
   font-style: italic;
   font-weight: bold;
   padding-right: 30px;
-  /*text-decoration: underline;*/
 }
 
 #log-in {
@@ -28,7 +27,6 @@ a.hover:hover {
   font-style: italic;
   font-weight: bold;
   padding-right: 50px;
-  /*text-decoration: underline;*/
 }
 
 #change-pw {
@@ -37,18 +35,14 @@ a.hover:hover {
 }
 
 .handlebarsDay {
-  /*color: #c30505;*/
   color: #6f0404;
-  /*font-family: 'Railway', 'Sans Serif';*/
   font-size: 45px;
   padding-left: 30px;
   text-align: justify;
 }
 
 .handlebarsType {
-  /*color: #f9b615;*/
   color: #5e5e5e;
-  /*font-family: 'Railway', 'Sans Serif';*/
   font-size: 40px;
   padding-left: 80px;
   text-align: justify;
@@ -59,7 +53,7 @@ a.hover:hover {
   font-size: 35px;
   margin-top: 35px;
   padding-left: 30px;
-  text-align: justify;
+  text-align: left;
 }
 
 .removeMealEvent {
@@ -138,7 +132,6 @@ body {
 }
 
 .topHeading {
-  /*color: #286090;*/
   color: #204e76;
   display: none;
   font-family: cursive;
@@ -202,35 +195,35 @@ body {
 .editEvent {
   background-color: #cecece;
   color: #008000;
-  font-size: 25px;
+  font-size: 22px;
 }
 
 .editIngEvent {
   background-color: #cecece;
   color: #008000;
-  font-size: 21px;
+  font-size: 19px;
 }
 
 .externalLink {
   background-color: #cecece;
   color: #286090;
-  font-size: 25px;
+  font-size: 22px;
 }
 
 .ingExternalLink, .ingExternalLink2 {
   background-color: #cecece;
   color: #286090;
-  font-size: 21px;
+  font-size: 19px;
 }
 
 .removeMealEvent {
   background-color: #cecece;
-  color: #c30505;
-  font-size: 25px;
+  color: #6f0404;
+  font-size: 22px;
 }
 
 .removeIngredientEvent {
   background-color: #cecece;
-  color: #c30505;
-  font-size: 21px;
+  color: #6f0404;
+  font-size: 19px;
 }

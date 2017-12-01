@@ -5,7 +5,7 @@ const authApi = require('./auth-api')
 const authUi = require('./auth-ui')
 
 const addHandlers = function () {
-  console.log('in events.js, addHandlers function')
+  // console.log('in events.js, addHandlers function')
 
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -32,7 +32,7 @@ const onOpenHtml = function (event) {
 }
 
 const onSignUp = function (event) {
-  console.log('in events.js, onSignUp')
+  // console.log('in events.js, onSignUp')
 
   event.preventDefault()
   const data = getFormFields(this)
@@ -44,7 +44,7 @@ const onSignUp = function (event) {
 }
 
 const onSignIn = function (event) {
-  console.log('in events.js, onSignIn')
+  // console.log('in events.js, onSignIn')
 
   event.preventDefault()
   const data = getFormFields(this)
@@ -54,7 +54,7 @@ const onSignIn = function (event) {
 }
 
 const onChangePassword = function (event) {
-  console.log('in events.js, onChangePassword')
+  // console.log('in events.js, onChangePassword')
 
   event.preventDefault()
   const data = getFormFields(this)
@@ -64,7 +64,7 @@ const onChangePassword = function (event) {
 }
 
 const onSignOut = function (event) {
-  console.log('in events.js, onSignOut')
+  // console.log('in events.js, onSignOut')
 
   event.preventDefault()
   const data = getFormFields(this)
@@ -74,7 +74,7 @@ const onSignOut = function (event) {
 }
 
 const OnCancelModal = function (event) {
-  console.log('in events.js, OnCancelModal')
+  // console.log('in events.js, OnCancelModal')
 
   event.preventDefault()
   $('.modal').on('hidden.bs.modal', function () {

@@ -1,6 +1,5 @@
 {{#each meals as |meal|}}
   <div class="row">
-    <!-- <div class="col-xs-12 col-md-6 col-lg-4" data-id="{{meal.id}}"> -->
       {{#if meal.id}}
         <div class="col-xs-12 col-md-4">
         <h3 class=handlebarsDay>{{meal.weekday}}</h3>
@@ -15,9 +14,9 @@
         <p id="mealmsg">You have no meals to display!</p>
       {{/if}}
       <div class="col-md-4">
-      <button class="externalLink" id="{{meal.url}}">{{meal.label}}</button>
-      <button class="removeMealEvent meal-button" id="{{meal.id}}">Remove</button>
-      <button class="editEvent meal-button" id="{{meal.id}}">Edit</button>
+      <button class="editEvent meal-button" id="{{meal.id}}"><span class="glyphicon glyphicon glyphicon-pencil"></span></button>
+      <button class="removeMealEvent meal-button" id="{{meal.id}}"><span class="glyphicon glyphicon glyphicon-trash"></span></button>
+      <button class="externalLink" id="{{meal.url}}">{{meal.label}}<span class="glyphicon glyphicon glyphicon-search"></span></button>
       </div>
       <br>
       <br>

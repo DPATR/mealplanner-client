@@ -1,0 +1,15 @@
+{{#each ingredients as |ingredient|}}
+    <div class="col-xs-12 col-md-6 col-lg-4" data-id="{{ingredient.id}}">
+      {{#if ingredient.id}}
+        <h3 id="ingredientitem" class="handlebarsIngredient">{{ingredient.ingredient}}</h3>
+      {{else}}
+        <p id="ingredmsg">You have no groceries to display!</p>
+      {{/if}}
+      <div>
+      <button class="editIngEvent ingredient-button" id="{{ingredient.id}}"><span class="glyphicon glyphicon glyphicon-pencil"></span></button>
+      <button class="removeIngredientEvent meal-button" id="{{ingredient.id}}"><span class="glyphicon glyphicon glyphicon-trash"></span></button>
+      <button class="ingExternalLink2" id="{{ingredient.url2}}">{{ingredient.label2}}<span class="glyphicon glyphicon glyphicon-search"></span></button>
+      <button class="ingExternalLink" id="{{ingredient.url}}">{{ingredient.label}}<span class="glyphicon glyphicon glyphicon-search"></span></button>
+      </div>
+    </div>
+{{/each}}

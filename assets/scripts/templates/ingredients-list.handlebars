@@ -6,10 +6,10 @@
         <p id="ingredmsg">You have no groceries to display!</p>
       {{/if}}
       <div>
-      <button class="editIngEvent ingredient-button" id="{{ingredient.id}}"><span class="glyphicon glyphicon glyphicon-pencil"></span></button>
-      <button class="removeIngredientEvent meal-button" id="{{ingredient.id}}"><span class="glyphicon glyphicon glyphicon-trash"></span></button>
-      <button class="ingExternalLink2" id="{{ingredient.url2}}">{{ingredient.label2}}<span class="glyphicon glyphicon glyphicon-search"></span></button>
-      <button class="ingExternalLink" id="{{ingredient.url}}">{{ingredient.label}}<span class="glyphicon glyphicon glyphicon-search"></span></button>
+      <button class="editIngEvent ingredient-button" id="{{ingredient.id}}">Edit</button>
+      <button class="removeIngredientEvent meal-button" id="{{ingredient.id}}">Remove</button>
+      <button class="ingExternalLink2" id="{{ingredient.url2}}">{{ingredient.label2}}</button>
+      <button class="ingExternalLink" id="{{ingredient.url}}">{{ingredient.label}}</button>
       </div>
     </div>
 {{/each}}

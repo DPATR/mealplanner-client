@@ -4,13 +4,8 @@ const store = require('../store')
 const mealsApi = require('../meals/meals-api.js')
 const mealsUi = require('../meals/meals-ui.js')
 
-// NEXT 2 LINES ONLY TEMPORARY to get rid of temp errors
-console.log(mealsApi)
-console.log(mealsUi)
-// PRIOR 2 LINES ONLY TEMPORARY to get rid of temp errors
-
 const signUpSuccess = function () {
-  console.log('in signUpSuccess ui.js')
+  // console.log('in signUpSuccess ui.js')
 
   $('#register').modal('hide')
   $('#register').on('hidden.bs.modal', function () {
@@ -26,8 +21,7 @@ const signUpFailure = function () {
 }
 
 const signInSuccess = function (data) {
-  console.log('in signInSuccess ui.js')
-
+  // console.log('in signInSuccess ui.js')
   store.user = data.user
   $('#register').modal('hide')
   $('#register').on('hidden.bs.modal', function () {
@@ -51,8 +45,7 @@ const signInSuccess = function (data) {
   // $('body').css('background-image', 'none')
   $('body').css('background-image', 'url("https://i.imgur.com/OIHPtuV.jpg")')
 
-  console.log('in auth-ui.js about to call getAllMeals')
-
+  // console.log('in auth-ui.js about to call getAllMeals')
   mealsApi.getAllMeals()
     .then(mealsUi.getMealsSuccess)
     .catch(mealsUi.getMealsFailure)
@@ -65,8 +58,7 @@ const signInFailure = function () {
 }
 
 const changePasswordSuccess = function (data) {
-  console.log('in changePasswordSuccess ui.js')
-
+  // console.log('in changePasswordSuccess ui.js')
   $('#message').text('Your password has been changed.')
   $('#message').show()
   setTimeout(function () { $('#message').fadeOut() }, 6000)
@@ -83,8 +75,7 @@ const changePasswordFailure = function () {
 }
 
 const signOutSuccess = function (data) {
-  console.log('in signOutSuccess ui.js')
-
+  // console.log('in signOutSuccess ui.js')
   $('#logout').modal('hide')
   $('#logout').on('hidden.bs.modal', function () {
     $(this).find('form')[0].reset()
@@ -103,10 +94,6 @@ const signOutSuccess = function (data) {
   $('.topHeading').hide()
   $('.topHeadingMain1').show()
   $('.topHeadingMain2').show()
-
-  // $('body').css('background-image', 'url("https://i.imgur.com/76TYS7S.jpg")')
-  // $('body').css('background-image', 'url("https://i.imgur.com/hocs4oa.jpg")')
-  // $('body').css('background-image', 'url("https://i.imgur.com/DqZo1AT.jpg")')
   $('body').css('background-image', 'url("https://i.imgur.com/sK3o13L.jpg")')
   $('.content').empty()
 }
