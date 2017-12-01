@@ -131,8 +131,11 @@
 
         <!-- Titles -->
         <h1 class="topHeading">Travel Meal Planner</h1>
-        <h2 class="topHeading2 hidden">This Week's Menu</h2>
-        <h2 class="topHeading3 hidden">Grocery List</h2>
+        <h1 class="topHeadingMain1">Meal</h1>
+        <h1 class="topHeadingMain2">Planner</h1>
+
+        <!-- <h2 class="topHeading2 hidden">This Week's Menu</h2> -->
+        <!-- <h2 class="topHeading3 hidden">Grocery List</h2> -->
 
         <!-- Capture Current Location -->
         <!-- </div> -->
@@ -162,14 +165,17 @@
           <div class="element">
             <div id="map">
               <!-- <iframe id="google_map" width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.uk?output=embed"></iframe> -->
-              <iframe id="google_map" width="400" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.uk?output=embed"></iframe>
+              <!-- <iframe id="google_map" width="400" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.uk?output=embed"></iframe> -->
+              <iframe id="google_map" width="900" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.uk?output=embed"></iframe>
+            </div>
             </div>
           </div>
         </div>
 
         <!-- Titles -->
-        <!-- <h2 class="topHeading2 hidden">This Week's Menu</h2>
-        <h2 class="topHeading3 hidden">Grocery List</h2> -->
+        <h2 class="topHeading2 hidden">This Week's Menu</h2>
+        <h2 class="topHeading3 hidden">Grocery List</h2>
+
           <!-- <script>
 
             var c = function(pos){
@@ -188,10 +194,14 @@
           <button id="getIngredients" class="btn btn-primary hidden">View Grocery List</button>
           <!-- View Meals Menu -->
           <button id="getMeals" class="btn btn-primary hidden">View Menu</button>
+          <!-- Create Meal Modal -->
+          <button type="button" id="create-meal" class="btn btn-primary hidden" data-toggle="modal" data-target="#new-meal">Add A Meal</button>
+          <!-- Create Ingredient Modal -->
+          <button type="button" id="create-ingredient" class="btn btn-primary hidden" data-toggle="modal" data-target="#new-ingredient">Add A Grocery Item</button>
         </div>
 
         <!-- Create Meal Modal -->
-        <button type="button" id="create-meal" class="btn btn-primary hidden" data-toggle="modal" data-target="#new-meal">Add A Meal</button>
+        <!-- <button type="button" id="create-meal" class="btn btn-primary hidden" data-toggle="modal" data-target="#new-meal">Add A Meal</button> -->
           <div class="modal fade" id="new-meal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -305,7 +315,7 @@
             </div>
 
             <!-- Create Ingredient Modal -->
-            <button type="button" id="create-ingredient" class="btn btn-primary hidden" data-toggle="modal" data-target="#new-ingredient">Add A Grocery Item</button>
+            <!-- <button type="button" id="create-ingredient" class="btn btn-primary hidden" data-toggle="modal" data-target="#new-ingredient">Add A Grocery Item</button> -->
               <div class="modal fade" id="new-ingredient" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">

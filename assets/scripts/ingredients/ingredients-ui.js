@@ -116,10 +116,10 @@ const getIngredientsSuccess = function (data) {
     //   break
       default:
         // ingredients.url = 'http://google.com/search?q=' + searchText + ' in ' + location + ' ' + ingredients.ingredient
-        ingredients.url = 'https://www.google.com/maps/search/' + ingredients.ingredient + '/@' + location
-        ingredients.label = 'Search by Location'
         ingredients.url2 = 'https://www.epicurious.com/search/' + ingredients.ingredient
-        ingredients.label2 = 'Search Epicurious Recipes'
+        ingredients.label2 = 'Recipes '
+        ingredients.url = 'https://www.google.com/maps/search/' + ingredients.ingredient + '/@' + location
+        ingredients.label = 'Location '
         // https://www.google.com/maps/search/shrimp/@42.3566423,-71.0557196,15z
         console.log('url is ', ingredients.url)
         console.log('url is ', ingredients.url2)

@@ -1,3 +1,30 @@
+.navbar-collapse {
+  /*border:2px solid gray;*/
+  /*margin-top: 15px;*/
+  /*font-size: 20px;*/
+}
+
+#log-out, #change-pw {
+  /*color: #093e6d;*/
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#signup, #log-in {
+  color: #c50a0a;
+  font-size: 47px;
+  font-weight: bold;
+  padding-right: 15px;
+}
+
+#log-in {
+  padding-left: 20px;
+}
+
+#change-pw {
+  padding-right: 20px;
+}
+
 .handlebarsType {
   padding-left: 30px;
 }
@@ -10,6 +37,11 @@
   margin-top: 35px;
 }
 
+#ingredientitem {
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
 .stroked {
   text-decoration: line-through;
 }
@@ -17,48 +49,29 @@
 .get-lists-btns {
   text-align: center;
   margin: auto;
+  margin-top: 30px;
 }
 
 #getIngredients {
   display: inline-block;
-  float:left;
   text-align: center;
 }
 
 #getMeals {
   display:inline-block;
-  float: left;
-
-  /*margin: 0 auto 0 auto;*/
-  /*text-align: center;*/
-  /*clear: left;*/
+  text-align: center;
 }
 
 #create-meal {
-  /*border:2px solid gray;*/
-  /*clear:left;*/
-
-  float:left;
-
-  /*margin: 2px;*/
-
   margin-left: 4px;
   text-align: center;
-
-  /*padding: 2px;*/
-  /*margin: auto;*/
 }
 
 #create-ingredient {
-  float: left;
+  /*float: left;*/
   margin-left: 4px;
-  /*text-align: center;*/
+  text-align: center;
 }
-
-/*#container {*/
-  /*text-align: center;*/
-  /*align-content: center;*/
-/*}*/
 
 body {
   background-attachment: fixed;
@@ -66,17 +79,17 @@ body {
   /*background-image: url(https://i.imgur.com/yeUuFBR.jpg);*/
   /*background-image: url(https://i.imgur.com/76TYS7S.jpg);*/
   /*background-image: url(https://i.imgur.com/7BR3MFR.jpg);*/
-  background-image: url(https://i.imgur.com/VEpxK4Q.jpg);
+  /*background-image: url(https://i.imgur.com/VEpxK4Q.jpg);*/
+  /*background-image: url(https://i.imgur.com/OIHPtuV.jpg);*/
+  /*background-image: url(https://i.imgur.com/hocs4oa.jpg);*/
+  /*background-image: url(https://i.imgur.com/DqZo1AT.jpg);*/
+  background-image: url(https://i.imgur.com/sK3o13L.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   clear: both;
   text-align: center;
 }
-
-/*.myFloat_Left {
-    float: left;
-}*/
 
 #google_map {
   border:2px solid gray;
@@ -86,15 +99,54 @@ body {
   margin-top: 0px;
 }
 
-/* I commented out all of this below to try to center map */
+.Holder {
+  /*border:2px solid green;*/
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
 
-/* width and height settings force google map to be left aligned */
-.element {
-  border:2px solid gray;
-  /*width: 400px;*/
-  /*height: 300px;*/
-  margin-top: 6px;
-  margin-bottom: 6px;
+.topHeading {
+  /*font-family: 'Yanone Kaffeesatz', 'Arial Narrow', 'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif;*/
+  /*font-family: 'PT Sans', sans-serif;*/
+  /*font-family: Lavanderia;*/
+  /*font-weight: 400;*/
+  /*color: #093e6d;*/
+  /*font-family: Georgia, serif;*/
+  display: none;
+  font-size: 60px;
+  font-style: italic;
+  /*font-weight: bold;*/
+  padding-bottom: 22px;
+  padding-top: 40px;
+  text-align: center;
+  vertical-align:middle;
+  width: 100vw;
+}
+
+.topHeadingMain1 {
+  color: #036003;
+  font-family: cursive;
+  font-size: 205px;
+  font-style: normal;
+  font-variant: normal;
+  /*font-weight: bold;*/
+  font-weight: 500;
+  margin-left: 30%;
+  margin-top: 15%;
+  line-height: 26.4px;
+}
+
+.topHeadingMain2 {
+  color: #024202;
+  font-family: cursive;
+  font-size: 198px;
+  font-style: normal;
+  font-variant: normal;
+  /*font-weight: bold;*/
+  font-weight: 500;
+  margin-left: 59%;
+  margin-top: 15%;
+  line-height: 26.4px;
 }
 
 /*.topHeading2 {*/
@@ -105,30 +157,6 @@ body {
   /*width: 300px;*/
 /*}*/
 
-/*.get-ing-btn {*/
-  /*border:2px solid gray;*/
-  /*clear:both;*/
-  /*margin: auto;*/
-  /*width: 200px;*/
-/*}*/
-
-/*.get-menu-btn {*/
-  /*border:2px solid gray;*/
-  /*clear:left;*/
-  /*margin: auto;*/
-  /*margin-left: 0px;*/
-  /*padding: 0px;*/
-  /*width: 200px;*/
-/*}*/
-
-/*#create-meal {*/
-  /*border:2px solid gray;*/
-  /*clear:left;*/
-  /*margin: auto;*/
-/*}*/
-
-/* I commented out everything below to try to center map - this is what worked! */
-
 /*.topHeading3 {*/
   /*border:2px solid gray;*/
   /*clear:left;*/
@@ -138,7 +166,7 @@ body {
 /*}*/
 
 #content {
-  border:2px solid gray;
+  /*border:2px solid gray;*/
   clear: both;
-  margin-top: 4px;
+  margin-top: 15px;
 }

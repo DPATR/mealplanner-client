@@ -45,8 +45,10 @@ const signInSuccess = function (data) {
   $('#create-meal').removeClass('hidden')
   $('#getIngredients').removeClass('hidden')
   $('#google_map').show()
-  $('body').css('background-image', 'none')
-  // $('#panel').removeClass('hidden')
+  $('.topHeading').show()
+
+  // $('body').css('background-image', 'none')
+  $('body').css('background-image', 'url("https://i.imgur.com/OIHPtuV.jpg")')
 
   console.log('in auth-ui.js about to call getAllMeals')
 
@@ -97,8 +99,12 @@ const signOutSuccess = function (data) {
   $('.topHeading2').addClass('hidden')
   $('.topHeading3').addClass('hidden')
   $('#google_map').hide()
-  $('body').css('background-image', 'url("https://i.imgur.com/7BR3MFR.jpg")')
-  // $('#panel').addClass('hidden')
+  $('.topHeading').hide()
+
+  // $('body').css('background-image', 'url("https://i.imgur.com/76TYS7S.jpg")')
+  // $('body').css('background-image', 'url("https://i.imgur.com/hocs4oa.jpg")')
+  // $('body').css('background-image', 'url("https://i.imgur.com/DqZo1AT.jpg")')
+  $('body').css('background-image', 'url("https://i.imgur.com/sK3o13L.jpg")')
   $('.content').empty()
 }
 

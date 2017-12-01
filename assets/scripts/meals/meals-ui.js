@@ -124,7 +124,7 @@ const getMealsSuccess = function (data) {
       //       break
       default:
         meals.url = 'https://www.epicurious.com/search/' + meals.entree
-        meals.label = 'Search Epicurious Recipes'
+        meals.label = 'Recipes '
     }
   })
   $('#list-content').empty()
