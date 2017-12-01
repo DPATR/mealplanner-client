@@ -60,6 +60,8 @@ Original Wireframe: https://imgur.com/GxHKhVT
 
 User Stories: https://imgur.com/irUjwzR
 
+Screenshot:  ![alt text](https://i.imgur.com/17ykhIw.jpg)
+
 Approach:
 
 I used a top-down analysis for this project. After doing some research on popular Menu Planning applications, I designed my own wireframe that would be appropriate for my intended use.
