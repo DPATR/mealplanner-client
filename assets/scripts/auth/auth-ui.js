@@ -46,7 +46,8 @@ const signInSuccess = function (data) {
   $('#getIngredients').removeClass('hidden')
   $('#google_map').show()
   $('.topHeading').show()
-
+  $('.topHeadingMain1').hide()
+  $('.topHeadingMain2').hide()
   // $('body').css('background-image', 'none')
   $('body').css('background-image', 'url("https://i.imgur.com/OIHPtuV.jpg")')
 
@@ -100,6 +101,8 @@ const signOutSuccess = function (data) {
   $('.topHeading3').addClass('hidden')
   $('#google_map').hide()
   $('.topHeading').hide()
+  $('.topHeadingMain1').show()
+  $('.topHeadingMain2').show()
 
   // $('body').css('background-image', 'url("https://i.imgur.com/76TYS7S.jpg")')
   // $('body').css('background-image', 'url("https://i.imgur.com/hocs4oa.jpg")')

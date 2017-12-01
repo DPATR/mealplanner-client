@@ -1,36 +1,65 @@
-.navbar-collapse {
-  /*border:2px solid gray;*/
-  /*margin-top: 15px;*/
-  /*font-size: 20px;*/
+a.hover {
+  text-decoration: none;
+}
+
+a.hover:hover {
+  text-decoration: underline;
 }
 
 #log-out, #change-pw {
-  /*color: #093e6d;*/
-  font-size: 25px;
+  color: #286090;
+  font-size: 30px;
+  font-style: italic;
   font-weight: bold;
 }
 
-#signup, #log-in {
+#signup {
   color: #c50a0a;
-  font-size: 47px;
+  font-size: 50px;
+  font-style: italic;
   font-weight: bold;
-  padding-right: 15px;
+  padding-right: 30px;
+  /*text-decoration: underline;*/
 }
 
 #log-in {
-  padding-left: 20px;
+  color: #c50a0a;
+  font-size: 50px;
+  font-style: italic;
+  font-weight: bold;
+  padding-right: 50px;
+  /*text-decoration: underline;*/
 }
 
 #change-pw {
+  color: #286090;
   padding-right: 20px;
 }
 
-.handlebarsType {
+.handlebarsDay {
+  /*color: #c30505;*/
+  color: #6f0404;
+  /*font-family: 'Railway', 'Sans Serif';*/
+  font-size: 45px;
   padding-left: 30px;
+  text-align: justify;
 }
 
-.list-group-item-text1 {
+.handlebarsType {
+  /*color: #f9b615;*/
+  color: #5e5e5e;
+  /*font-family: 'Railway', 'Sans Serif';*/
+  font-size: 40px;
+  padding-left: 80px;
+  text-align: justify;
+}
+
+.list-group-item-text1, .list-group-item-text2, .list-group-item-text3 {
+  color: #5e5e5e;
+  font-size: 35px;
   margin-top: 35px;
+  padding-left: 30px;
+  text-align: justify;
 }
 
 .removeMealEvent {
@@ -38,8 +67,10 @@
 }
 
 #ingredientitem {
-  margin-bottom: 20px;
-  margin-top: 50px;
+  color: #5e5e5e;
+  font-size: 35px;
+  padding-bottom: 30px;
+  padding-top: 80px;
 }
 
 .stroked {
@@ -49,26 +80,38 @@
 .get-lists-btns {
   text-align: center;
   margin: auto;
-  margin-top: 30px;
+  margin-top: 60px;
+  margin-bottom: 45px;
 }
 
 #getIngredients {
+  background-color: #cecece;
+  color: #286090;
   display: inline-block;
+  font-size: 25px;
   text-align: center;
 }
 
 #getMeals {
+  background-color: #cecece;
+  color: #286090;
   display:inline-block;
+  font-size: 25px;
   text-align: center;
 }
 
 #create-meal {
+  background-color: #cecece;
+  color: #286090;
+  font-size: 25px;
   margin-left: 4px;
   text-align: center;
 }
 
 #create-ingredient {
-  /*float: left;*/
+  background-color: #cecece;
+  color: #286090;
+  font-size: 25px;
   margin-left: 4px;
   text-align: center;
 }
@@ -76,13 +119,6 @@
 body {
   background-attachment: fixed;
   background-color: white;
-  /*background-image: url(https://i.imgur.com/yeUuFBR.jpg);*/
-  /*background-image: url(https://i.imgur.com/76TYS7S.jpg);*/
-  /*background-image: url(https://i.imgur.com/7BR3MFR.jpg);*/
-  /*background-image: url(https://i.imgur.com/VEpxK4Q.jpg);*/
-  /*background-image: url(https://i.imgur.com/OIHPtuV.jpg);*/
-  /*background-image: url(https://i.imgur.com/hocs4oa.jpg);*/
-  /*background-image: url(https://i.imgur.com/DqZo1AT.jpg);*/
   background-image: url(https://i.imgur.com/sK3o13L.jpg);
   background-position: center center;
   background-repeat: no-repeat;
@@ -94,79 +130,107 @@ body {
 #google_map {
   border:2px solid gray;
   display: none;
-  /*clear: right;*/
-  /*float: left;*/
-  margin-top: 0px;
 }
 
 .Holder {
-  /*border:2px solid green;*/
   margin-top: 35px;
-  margin-bottom: 35px;
+  margin-bottom: 65px;
 }
 
 .topHeading {
-  /*font-family: 'Yanone Kaffeesatz', 'Arial Narrow', 'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif;*/
-  /*font-family: 'PT Sans', sans-serif;*/
-  /*font-family: Lavanderia;*/
-  /*font-weight: 400;*/
-  /*color: #093e6d;*/
-  /*font-family: Georgia, serif;*/
+  /*color: #286090;*/
+  color: #204e76;
   display: none;
-  font-size: 60px;
-  font-style: italic;
-  /*font-weight: bold;*/
+  font-family: cursive;
+  font-size: 110px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
   padding-bottom: 22px;
-  padding-top: 40px;
+  padding-top: 75px;
   text-align: center;
   vertical-align:middle;
   width: 100vw;
 }
 
 .topHeadingMain1 {
-  color: #036003;
+  color: #024d02;
   font-family: cursive;
-  font-size: 205px;
+  font-size: 225px;
   font-style: normal;
   font-variant: normal;
-  /*font-weight: bold;*/
-  font-weight: 500;
-  margin-left: 30%;
-  margin-top: 15%;
+  font-weight: bold;
+  font-weight: 520;
   line-height: 26.4px;
+  z-index: 100;
+  position: absolute;
+  left: 980px;
+  top: 260px;
 }
 
 .topHeadingMain2 {
-  color: #024202;
+  color: #024d02;
   font-family: cursive;
-  font-size: 198px;
+  font-size: 225px;
   font-style: normal;
   font-variant: normal;
-  /*font-weight: bold;*/
-  font-weight: 500;
-  margin-left: 59%;
-  margin-top: 15%;
+  font-weight: 520;
   line-height: 26.4px;
+  z-index: 100;
+  position: absolute;
+  left: 1140px;
+  top: 590px;
 }
 
-/*.topHeading2 {*/
-  /*border:2px solid gray;*/
-  /*clear:left;*/
-  /*float: left;*/
-  /*margin: auto;*/
-  /*width: 300px;*/
-/*}*/
+.topHeading2 {
+  color: #204e76;
+  font-family: 'Railway', 'Sans Serif';
+  font-size: 65px;
+}
 
-/*.topHeading3 {*/
-  /*border:2px solid gray;*/
-  /*clear:left;*/
-  /*float: left;*/
-  /*margin: auto;*/
-  /*width: 300px;*/
-/*}*/
+.topHeading3 {
+  color: #204e76;
+  font-family: 'Railway', 'Sans Serif';
+  font-size: 65px;
+}
 
 #content {
-  /*border:2px solid gray;*/
   clear: both;
-  margin-top: 15px;
+  margin-top: 35px;
+}
+
+.editEvent {
+  background-color: #cecece;
+  color: #008000;
+  font-size: 25px;
+}
+
+.editIngEvent {
+  background-color: #cecece;
+  color: #008000;
+  font-size: 21px;
+}
+
+.externalLink {
+  background-color: #cecece;
+  color: #286090;
+  font-size: 25px;
+}
+
+.ingExternalLink, .ingExternalLink2 {
+  background-color: #cecece;
+  color: #286090;
+  font-size: 21px;
+}
+
+.removeMealEvent {
+  background-color: #cecece;
+  color: #c30505;
+  font-size: 25px;
+}
+
+.removeIngredientEvent {
+  background-color: #cecece;
+  color: #c30505;
+  font-size: 21px;
 }
